@@ -173,9 +173,9 @@ function Loader({ done }: { done: boolean }) {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex h-16 w-16 items-center justify-center rounded-full border border-beige/30"
+          className="flex h-24 w-24 items-center justify-center"
         >
-          <Shield className="h-7 w-7 text-beige" />
+          <img src={logoImg} alt="Instituto Juan B. Alberdi" className="h-24 w-24 object-contain drop-shadow-[0_0_24px_rgba(216,195,165,0.35)]" />
         </motion.div>
         <div className="h-px w-40 overflow-hidden bg-white/10">
           <div className="h-full w-full bg-beige loading-bar !static" />
