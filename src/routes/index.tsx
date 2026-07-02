@@ -1128,6 +1128,7 @@ function LandingPage() {
         <Hero />
         <Servicios />
         <Diferenciales />
+        <Galeria />
         <Proposito />
         <Direccion />
         <Beneficios />
