@@ -23,18 +23,26 @@ import heroAsset from "@/assets/aula-pizarron.jpg.asset.json";
 import directorAsset from "@/assets/directora.jpg.asset.json";
 import purposeAsset from "@/assets/clase-grupo.jpg.asset.json";
 import entrenamientoAsset from "@/assets/entrenamiento.jpg.asset.json";
+import logoAsset from "@/assets/logoacademia.png.asset.json";
+import groupParkAsset from "@/assets/group-park.jpeg.asset.json";
+import trainingConesAsset from "@/assets/training-cones.jpeg.asset.json";
+import flyerAsset from "@/assets/flyer-2027.jpeg.asset.json";
 import video1 from "@/assets/video1.mp4.asset.json";
 import video2 from "@/assets/video2.mp4.asset.json";
 import video3 from "@/assets/video3.mp4.asset.json";
 import video4 from "@/assets/video4.mp4.asset.json";
 import video5 from "@/assets/video5.mp4.asset.json";
+import video6 from "@/assets/training-1.mp4.asset.json";
+import video7 from "@/assets/training-2.mp4.asset.json";
 
 const heroImg = heroAsset.url;
 const directorImg = directorAsset.url;
 const purposeImg = purposeAsset.url;
 const entrenamientoImg = entrenamientoAsset.url;
-const GALLERY_VIDEOS = [video1.url, video2.url, video3.url, video4.url, video5.url];
-const GALLERY_IMAGES = [purposeAsset.url, heroAsset.url, entrenamientoAsset.url];
+const logoImg = logoAsset.url;
+const flyerImg = flyerAsset.url;
+const GALLERY_VIDEOS = [video1.url, video2.url, video3.url, video4.url, video5.url, video6.url, video7.url];
+const GALLERY_IMAGES = [purposeAsset.url, heroAsset.url, entrenamientoAsset.url, groupParkAsset.url, trainingConesAsset.url, flyerAsset.url];
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
@@ -165,9 +173,9 @@ function Loader({ done }: { done: boolean }) {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex h-16 w-16 items-center justify-center rounded-full border border-beige/30"
+          className="flex h-24 w-24 items-center justify-center"
         >
-          <Shield className="h-7 w-7 text-beige" />
+          <img src={logoImg} alt="Instituto Juan B. Alberdi" className="h-24 w-24 object-contain drop-shadow-[0_0_24px_rgba(216,195,165,0.35)]" />
         </motion.div>
         <div className="h-px w-40 overflow-hidden bg-white/10">
           <div className="h-full w-full bg-beige loading-bar !static" />
@@ -202,8 +210,8 @@ function Navbar() {
     >
       <div className="container-x flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3 text-white">
-          <div className="flex h-9 w-9 items-center justify-center rounded-sm border border-beige/40">
-            <Shield className="h-4 w-4 text-beige" />
+          <div className="flex h-11 w-11 items-center justify-center">
+            <img src={logoImg} alt="Logo Instituto" className="h-11 w-11 object-contain" />
           </div>
           <div className="leading-tight">
             <div className="font-display text-lg">Instituto de Apoyo Académico</div>
@@ -959,8 +967,8 @@ function Footer() {
       <div className="container-x py-16 grid gap-12 lg:grid-cols-4">
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3 text-white">
-            <div className="flex h-9 w-9 items-center justify-center rounded-sm border border-beige/40">
-              <Shield className="h-4 w-4 text-beige" />
+            <div className="flex h-11 w-11 items-center justify-center">
+              <img src={logoImg} alt="Logo Instituto" className="h-11 w-11 object-contain" />
             </div>
             <div className="font-display text-lg">Instituto de Apoyo Académico</div>
           </div>
