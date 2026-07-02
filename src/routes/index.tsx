@@ -210,8 +210,8 @@ function Navbar() {
     >
       <div className="container-x flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3 text-white">
-          <div className="flex h-9 w-9 items-center justify-center rounded-sm border border-beige/40">
-            <Shield className="h-4 w-4 text-beige" />
+          <div className="flex h-11 w-11 items-center justify-center">
+            <img src={logoImg} alt="Logo Instituto" className="h-11 w-11 object-contain" />
           </div>
           <div className="leading-tight">
             <div className="font-display text-lg">Instituto de Apoyo Académico</div>
