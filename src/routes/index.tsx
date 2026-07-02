@@ -1051,7 +1051,67 @@ function WhatsAppFloat() {
   );
 }
 
-/* ---------- Page ---------- */
+/* ---------- Galería ---------- */
+
+function Galeria() {
+  return (
+    <section id="galeria" className="py-28 lg:py-36 bg-ink text-white overflow-hidden">
+      <div className="container-x">
+        <FadeIn>
+          <div className="max-w-2xl">
+            <SectionEyebrow>El instituto en acción</SectionEyebrow>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl text-balance">
+              Formación real, resultados reales.
+            </h2>
+            <p className="mt-5 text-white/70 leading-relaxed">
+              Momentos de nuestras clases, entrenamiento físico y trabajo diario con los aspirantes.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {GALLERY_IMAGES.map((src, i) => (
+            <FadeIn key={src} delay={i * 0.06}>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm group">
+                <img
+                  src={src}
+                  alt={`Instituto ${i + 1}`}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-[1.2s] group-hover:scale-105"
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-beige/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {GALLERY_VIDEOS.map((src, i) => (
+            <FadeIn key={src} delay={i * 0.06}>
+              <div className="relative aspect-video overflow-hidden rounded-sm bg-navy-deep ring-1 ring-inset ring-beige/20">
+                <video
+                  src={src}
+                  className="h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+                <div className="absolute bottom-3 left-3 text-[10px] uppercase tracking-[0.25em] text-beige/90 bg-ink/60 px-2 py-1 rounded-sm">
+                  Clip 0{i + 1}
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 
 function LandingPage() {
   const [loaded, setLoaded] = useState(false);
