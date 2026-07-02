@@ -60,6 +60,7 @@ const WA_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
 const NAV = [
   { href: "#servicios", label: "Servicios" },
   { href: "#diferenciales", label: "Diferenciales" },
+  { href: "#galeria", label: "Instituto" },
   { href: "#direccion", label: "Dirección" },
   { href: "#proceso", label: "Proceso" },
   { href: "#testimonios", label: "Testimonios" },
