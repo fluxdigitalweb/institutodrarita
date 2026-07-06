@@ -28,6 +28,7 @@ import logoAsset from "@/assets/logoacademia.png.asset.json";
 import groupParkAsset from "@/assets/group-park.jpeg.asset.json";
 import trainingConesAsset from "@/assets/training-cones.jpeg.asset.json";
 import flyerAsset from "@/assets/flyer-2027.jpeg.asset.json";
+import clasePizarronAsset from "@/assets/clase-pizarron.png.asset.json";
 import video1 from "@/assets/video1.mp4.asset.json";
 import video2 from "@/assets/video2.mp4.asset.json";
 import video3 from "@/assets/video3.mp4.asset.json";
@@ -44,7 +45,7 @@ const entrenamientoImg = entrenamientoAsset.url;
 const logoImg = logoAsset.url;
 const flyerImg = flyerAsset.url;
 const GALLERY_VIDEOS = [video1.url, video2.url, video3.url, video4.url, video5.url, video6.url, video7.url];
-const GALLERY_IMAGES = [purposeAsset.url, groupParkAsset.url, trainingConesAsset.url];
+const GALLERY_IMAGES = [purposeAsset.url, groupParkAsset.url, trainingConesAsset.url, clasePizarronAsset.url];
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
@@ -294,16 +295,6 @@ function Hero() {
       id="top"
       className="relative min-h-screen bg-navy-deep text-white overflow-hidden pt-28 lg:pt-0 flex items-center"
     >
-      {/* Subtle grid texture */}
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--beige) 1px, transparent 1px), linear-gradient(90deg, var(--beige) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }}
-      />
       {/* Vignette */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-deep/95 to-black/60" />
 
