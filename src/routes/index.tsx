@@ -1228,6 +1228,7 @@ function LandingPage() {
         <Galeria />
         <Proposito />
         <Direccion />
+        <OrientacionVocacional />
         <Beneficios />
         <Proceso />
         <Testimonios />
