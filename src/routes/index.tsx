@@ -678,7 +678,94 @@ function Direccion() {
   );
 }
 
-/* ---------- Beneficios ---------- */
+/* ---------- Orientación Vocacional ---------- */
+
+const KURESZA_PILARES = [
+  "Terapia cognitiva conductual",
+  "Diplomada en Psicodiagnóstico Clínico",
+  "Posgrado en Neuropsicología",
+];
+
+function OrientacionVocacional() {
+  return (
+    <section id="orientacion" className="py-28 lg:py-36 bg-beige-light/30">
+      <div className="container-x">
+        <FadeIn>
+          <div className="text-center max-w-2xl mx-auto">
+            <SectionEyebrow>Área complementaria</SectionEyebrow>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl text-navy-deep">
+              Orientación Vocacional y Entrenamiento Cognitivo
+            </h2>
+            <p className="mt-5 text-navy/70 leading-relaxed">
+              Acompañamiento profesional para potenciar el desarrollo cognitivo,
+              emocional y vocacional de cada aspirante.
+            </p>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.15}>
+          <div className="mt-16 mx-auto max-w-6xl bg-white border border-beige/50 rounded-sm overflow-hidden grid lg:grid-cols-[420px_1fr] shadow-elegant">
+            <div className="relative bg-navy-deep">
+              <img
+                src={kureszaImg}
+                alt="Lic. Natalia Kuresza"
+                width={828}
+                height={1280}
+                loading="lazy"
+                className="h-full w-full object-cover aspect-[4/5]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-beige">
+                  Psicóloga
+                </div>
+                <div className="mt-1 font-display text-3xl">Lic. Natalia Kuresza</div>
+                <div className="mt-1 text-xs text-beige/80 tracking-wide">
+                  M.P. N° 962
+                </div>
+              </div>
+            </div>
+
+            <div className="p-8 lg:p-14">
+              <div className="inline-flex items-center gap-2 text-crimson text-[11px] uppercase tracking-[0.25em]">
+                <Brain className="h-3.5 w-3.5" /> Evaluación · Diagnóstico · Tratamiento
+              </div>
+              <h3 className="mt-4 font-display text-3xl lg:text-4xl text-navy-deep leading-tight">
+                Un acompañamiento clínico y cognitivo para el aspirante integral.
+              </h3>
+              <p className="mt-5 text-navy/70 leading-relaxed">
+                Evaluación, diagnóstico y tratamiento orientados a fortalecer las
+                capacidades intelectuales, emocionales y vocacionales necesarias
+                para afrontar el proceso de ingreso.
+              </p>
+
+              <div className="mt-8">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-navy/50">
+                  Pilares de mi formación
+                </div>
+                <ul className="mt-5 space-y-3">
+                  {KURESZA_PILARES.map((p) => (
+                    <li key={p} className="flex items-start gap-3 text-navy/80 text-sm">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-crimson" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-10 border-l-2 border-crimson pl-5">
+                <p className="font-display text-xl italic text-navy-deep">
+                  “El entrenamiento cognitivo y la orientación vocacional son
+                  claves para construir un ingreso sólido y sostenido.”
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
 
 const BENEFITS = [
   "Atención personalizada",
