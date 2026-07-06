@@ -437,8 +437,8 @@ const SERVICES = [
   },
   {
     icon: HeartPulse,
-    title: "Evaluación psicológica",
-    text: "Preparación para entrevistas y evaluaciones psicológicas.",
+    title: "Orientación vocacional y entrenamiento cognitivo",
+    text: "Lic. Natalia Kuresza · M.P. N° 962",
   },
   {
     icon: Dumbbell,
