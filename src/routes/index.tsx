@@ -28,6 +28,7 @@ import logoAsset from "@/assets/logoacademia.png.asset.json";
 import groupParkAsset from "@/assets/group-park.jpeg.asset.json";
 import trainingConesAsset from "@/assets/training-cones.jpeg.asset.json";
 import flyerAsset from "@/assets/flyer-2027.jpeg.asset.json";
+import clasePizarronAsset from "@/assets/clase-pizarron.png.asset.json";
 import video1 from "@/assets/video1.mp4.asset.json";
 import video2 from "@/assets/video2.mp4.asset.json";
 import video3 from "@/assets/video3.mp4.asset.json";
