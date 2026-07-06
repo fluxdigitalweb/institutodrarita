@@ -400,7 +400,7 @@ function Hero() {
         >
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
             <img
-              src={heroImg}
+              src={flyerImg}
               alt="Aspirantes a las fuerzas de seguridad en formación"
               width={1280}
               height={1600}
