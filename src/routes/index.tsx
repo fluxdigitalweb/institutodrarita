@@ -294,16 +294,6 @@ function Hero() {
       id="top"
       className="relative min-h-screen bg-navy-deep text-white overflow-hidden pt-28 lg:pt-0 flex items-center"
     >
-      {/* Subtle grid texture */}
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--beige) 1px, transparent 1px), linear-gradient(90deg, var(--beige) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }}
-      />
       {/* Vignette */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-deep/95 to-black/60" />
 
