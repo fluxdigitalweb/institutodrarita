@@ -38,6 +38,7 @@ import video7 from "@/assets/training-2.mp4.asset.json";
 
 const heroImg = heroAsset.url;
 const directorImg = directorAsset.url;
+const kureszaImg = kureszaAsset.url;
 const purposeImg = purposeAsset.url;
 const entrenamientoImg = entrenamientoAsset.url;
 const logoImg = logoAsset.url;
