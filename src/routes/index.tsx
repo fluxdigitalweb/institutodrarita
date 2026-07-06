@@ -45,7 +45,7 @@ const entrenamientoImg = entrenamientoAsset.url;
 const logoImg = logoAsset.url;
 const flyerImg = flyerAsset.url;
 const GALLERY_VIDEOS = [video1.url, video2.url, video3.url, video4.url, video5.url, video6.url, video7.url];
-const GALLERY_IMAGES = [purposeAsset.url, groupParkAsset.url, trainingConesAsset.url];
+const GALLERY_IMAGES = [purposeAsset.url, groupParkAsset.url, trainingConesAsset.url, clasePizarronAsset.url];
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
