@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import heroAsset from "@/assets/aula-pizarron.jpg.asset.json";
 import directorAsset from "@/assets/directora.jpg.asset.json";
+import kureszaAsset from "@/assets/kuresza.jpeg.asset.json";
 import purposeAsset from "@/assets/clase-grupo.jpg.asset.json";
 import entrenamientoAsset from "@/assets/entrenamiento.jpg.asset.json";
 import logoAsset from "@/assets/logoacademia.png.asset.json";
