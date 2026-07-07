@@ -369,7 +369,7 @@ function Hero() {
             className="mt-10 flex flex-wrap gap-4"
           >
             <a
-              href={WA_URL}
+              href={WA_URL_INFO}
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center gap-2 rounded-sm bg-beige px-8 py-4 text-xs uppercase tracking-[0.2em] text-navy-deep hover:bg-white transition-all hover:-translate-y-0.5 shadow-[0_15px_40px_-15px_color-mix(in_oklab,var(--beige)_80%,transparent)]"
@@ -378,10 +378,12 @@ function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="#contacto"
+              href={WA_URL_ENTREVISTA}
+              target="_blank"
+              rel="noreferrer"
               className="group inline-flex items-center gap-2 rounded-sm border border-white/25 px-8 py-4 text-xs uppercase tracking-[0.2em] text-white hover:border-beige hover:text-beige transition-all"
             >
-              Reservar entrevista
+              Agendar entrevista
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </motion.div>
