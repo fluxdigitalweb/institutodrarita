@@ -63,10 +63,15 @@ export const Route = createFileRoute("/")({
 /* ---------- Constants ---------- */
 
 const WHATSAPP_NUMBER = "5493855000000"; // placeholder AR
-const WHATSAPP_MSG = encodeURIComponent(
-  "Hola, quiero información sobre la preparación para el ingreso a las fuerzas de seguridad.",
+const WHATSAPP_MSG_INFO = encodeURIComponent(
+  "Hola, quiero solicitar información sobre orientación vocacional y entrenamiento cognitivo con la Lic. Natalia Kuresza (M.P. N° 962).",
 );
-const WA_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
+const WHATSAPP_MSG_ENTREVISTA = encodeURIComponent(
+  "Hola, quiero agendar una entrevista para orientación vocacional y entrenamiento cognitivo con la Lic. Natalia Kuresza (M.P. N° 962).",
+);
+const WA_URL_INFO = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG_INFO}`;
+const WA_URL_ENTREVISTA = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG_ENTREVISTA}`;
+const WA_URL = WA_URL_INFO;
 
 const NAV = [
   { href: "#servicios", label: "Servicios" },
@@ -364,7 +369,7 @@ function Hero() {
             className="mt-10 flex flex-wrap gap-4"
           >
             <a
-              href={WA_URL}
+              href={WA_URL_INFO}
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center gap-2 rounded-sm bg-beige px-8 py-4 text-xs uppercase tracking-[0.2em] text-navy-deep hover:bg-white transition-all hover:-translate-y-0.5 shadow-[0_15px_40px_-15px_color-mix(in_oklab,var(--beige)_80%,transparent)]"
@@ -373,10 +378,12 @@ function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="#contacto"
+              href={WA_URL_ENTREVISTA}
+              target="_blank"
+              rel="noreferrer"
               className="group inline-flex items-center gap-2 rounded-sm border border-white/25 px-8 py-4 text-xs uppercase tracking-[0.2em] text-white hover:border-beige hover:text-beige transition-all"
             >
-              Reservar entrevista
+              Agendar entrevista
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
           </motion.div>
@@ -1016,7 +1023,7 @@ function CTAFinal() {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
-              href={WA_URL}
+              href={WA_URL_INFO}
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center gap-2 rounded-sm bg-crimson px-8 py-4 text-xs uppercase tracking-[0.2em] text-white hover:bg-crimson/90 transition-all hover:-translate-y-0.5 shadow-[0_15px_40px_-15px_color-mix(in_oklab,var(--crimson)_80%,transparent)]"
@@ -1024,7 +1031,7 @@ function CTAFinal() {
               <MessageCircle className="h-4 w-4" /> Solicitar información
             </a>
             <a
-              href={WA_URL}
+              href={WA_URL_ENTREVISTA}
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center gap-2 rounded-sm border border-beige/50 px-8 py-4 text-xs uppercase tracking-[0.2em] text-beige hover:bg-beige hover:text-navy-deep transition-all"
