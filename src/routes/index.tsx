@@ -997,15 +997,6 @@ function CTAFinal() {
       id="contacto"
       className="relative py-32 lg:py-40 bg-navy-deep text-white overflow-hidden"
     >
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--beige) 1px, transparent 1px), linear-gradient(90deg, var(--beige) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-96 w-[900px] rounded-full bg-crimson/20 blur-[120px]" />
       <div className="container-x relative text-center max-w-3xl mx-auto">
         <FadeIn>
