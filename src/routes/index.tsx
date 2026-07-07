@@ -1023,7 +1023,7 @@ function CTAFinal() {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
-              href={WA_URL}
+              href={WA_URL_INFO}
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center gap-2 rounded-sm bg-crimson px-8 py-4 text-xs uppercase tracking-[0.2em] text-white hover:bg-crimson/90 transition-all hover:-translate-y-0.5 shadow-[0_15px_40px_-15px_color-mix(in_oklab,var(--crimson)_80%,transparent)]"
@@ -1031,7 +1031,7 @@ function CTAFinal() {
               <MessageCircle className="h-4 w-4" /> Solicitar información
             </a>
             <a
-              href={WA_URL}
+              href={WA_URL_ENTREVISTA}
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center gap-2 rounded-sm border border-beige/50 px-8 py-4 text-xs uppercase tracking-[0.2em] text-beige hover:bg-beige hover:text-navy-deep transition-all"
