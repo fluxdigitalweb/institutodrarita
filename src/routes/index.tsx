@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useScroll, useTransform, animate } from "framer-motion";
+import { motion, useInView, useScroll, useTransform, animate, AnimatePresence } from "framer-motion";
 import {
   Brain,
   HeartPulse,
@@ -18,6 +18,7 @@ import {
   Shield,
   Award,
   ChevronRight,
+  ChevronLeft,
 } from "lucide-react";
 import heroAsset from "@/assets/aula-pizarron.jpg.asset.json";
 import directorAsset from "@/assets/directora.jpg.asset.json";
@@ -997,12 +998,70 @@ function Ubicacion() {
 
 /* ---------- ENFE 2022 ---------- */
 
+function ENFECarousel({ images }: { images: { src: string; alt: string }[] }) {
+  const [current, setCurrent] = useState(0);
+  const next = () => setCurrent((i) => (i + 1) % images.length);
+  const prev = () => setCurrent((i) => (i - 1 + images.length) % images.length);
+
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <div className="mt-14 relative">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-navy-deep/10 shadow-card">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={current}
+            src={images[current].src}
+            alt={images[current].alt}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </AnimatePresence>
+      </div>
+
+      <button
+        onClick={prev}
+        aria-label="Imagen anterior"
+        className="absolute left-3 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/90 border border-navy-deep/10 shadow-md flex items-center justify-center text-navy-deep hover:bg-white hover:scale-105 transition-all"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Imagen siguiente"
+        className="absolute right-3 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/90 border border-navy-deep/10 shadow-md flex items-center justify-center text-navy-deep hover:bg-white hover:scale-105 transition-all"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+
+      <div className="mt-5 flex items-center justify-center gap-2">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Ver imagen ${i + 1}`}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === current ? "w-6 bg-navy-deep" : "w-2 bg-navy-deep/30 hover:bg-navy-deep/50"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ENFE2022() {
   const images = [
-    { src: enfePanoramicaAsset.url, alt: "Panorámica del ENFE 2022 en el Monumento a la Bandera, Rosario", span: "md:col-span-2" },
-    { src: enfeGrupoAsset.url, alt: "Grupo de participantes del ENFE 2022 con la bandera Familias por la Educación", span: "" },
-    { src: enfeBanderaAsset.url, alt: "Bandera Encuentro Nacional Familias por la Educación desplegada", span: "" },
-    { src: enfe2021Asset.url, alt: "Segundo Encuentro Nacional Familias por la Educación 2021", span: "md:col-span-2" },
+    { src: enfePanoramicaAsset.url, alt: "Panorámica del ENFE 2022 en el Monumento a la Bandera, Rosario" },
+    { src: enfeGrupoAsset.url, alt: "Grupo de participantes del ENFE 2022 con la bandera Familias por la Educación" },
+    { src: enfeBanderaAsset.url, alt: "Bandera Encuentro Nacional Familias por la Educación desplegada" },
+    { src: enfe2021Asset.url, alt: "Segundo Encuentro Nacional Familias por la Educación 2021" },
   ];
   return (
     <section id="enfe-2022" className="py-28 lg:py-36 bg-beige-light/40">
@@ -1020,20 +1079,7 @@ function ENFE2022() {
           </p>
         </FadeIn>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-5">
-          {images.map((img, i) => (
-            <FadeIn key={i} delay={i * 0.08} className={img.span}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-navy-deep/10 shadow-card group">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+        <ENFECarousel images={images} />
 
         <FadeIn delay={0.2}>
           <div className="mt-14 grid md:grid-cols-2 gap-5">
