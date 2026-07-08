@@ -18,6 +18,7 @@ import {
   Shield,
   Award,
   ChevronRight,
+  ChevronLeft,
 } from "lucide-react";
 import heroAsset from "@/assets/aula-pizarron.jpg.asset.json";
 import directorAsset from "@/assets/directora.jpg.asset.json";
