@@ -998,6 +998,64 @@ function Ubicacion() {
 
 /* ---------- ENFE 2022 ---------- */
 
+function ENFECarousel({ images }: { images: { src: string; alt: string }[] }) {
+  const [current, setCurrent] = useState(0);
+  const next = () => setCurrent((i) => (i + 1) % images.length);
+  const prev = () => setCurrent((i) => (i - 1 + images.length) % images.length);
+
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <div className="mt-14 relative">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-navy-deep/10 shadow-card">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={current}
+            src={images[current].src}
+            alt={images[current].alt}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </AnimatePresence>
+      </div>
+
+      <button
+        onClick={prev}
+        aria-label="Imagen anterior"
+        className="absolute left-3 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/90 border border-navy-deep/10 shadow-md flex items-center justify-center text-navy-deep hover:bg-white hover:scale-105 transition-all"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Imagen siguiente"
+        className="absolute right-3 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/90 border border-navy-deep/10 shadow-md flex items-center justify-center text-navy-deep hover:bg-white hover:scale-105 transition-all"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+
+      <div className="mt-5 flex items-center justify-center gap-2">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Ver imagen ${i + 1}`}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === current ? "w-6 bg-navy-deep" : "w-2 bg-navy-deep/30 hover:bg-navy-deep/50"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ENFE2022() {
   const images = [
     { src: enfePanoramicaAsset.url, alt: "Panorámica del ENFE 2022 en el Monumento a la Bandera, Rosario", span: "md:col-span-2" },
