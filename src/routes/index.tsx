@@ -1082,39 +1082,68 @@ function ENFE2022() {
         <ENFECarousel images={images} />
 
         <FadeIn delay={0.2}>
-          <div className="mt-14 grid md:grid-cols-2 gap-5">
-            <a
-              href={manifiestoAsset.url}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-start gap-5 p-7 bg-white rounded-sm border border-navy-deep/10 shadow-card hover:-translate-y-0.5 transition-all"
-            >
-              <div className="shrink-0 h-12 w-12 rounded-sm bg-crimson/10 flex items-center justify-center">
-                <Award className="h-6 w-6 text-crimson" />
+          <div className="mt-14 grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-sm border border-navy-deep/10 shadow-card overflow-hidden">
+              <div className="p-5 border-b border-navy-deep/10 flex items-center gap-3">
+                <div className="shrink-0 h-10 w-10 rounded-sm bg-crimson/10 flex items-center justify-center">
+                  <Award className="h-5 w-5 text-crimson" />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-navy/60">Documento</div>
+                  <div className="font-display text-lg text-navy-deep">Manifiesto por la Educación</div>
+                </div>
               </div>
-              <div className="flex-1">
-                <div className="text-xs uppercase tracking-[0.2em] text-navy/60">Documento</div>
-                <div className="mt-1 font-display text-xl text-navy-deep">Manifiesto por la Educación</div>
-                <div className="mt-2 text-sm text-navy/70">Descargar PDF</div>
+              <div className="relative aspect-[4/3] bg-navy-deep/5">
+                <iframe
+                  src={manifiestoAsset.url}
+                  title="Manifiesto por la Educación"
+                  className="absolute inset-0 h-full w-full"
+                  loading="lazy"
+                />
               </div>
-              <ArrowRight className="h-5 w-5 text-navy-deep transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href={enfeDocAsset.url}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-start gap-5 p-7 bg-white rounded-sm border border-navy-deep/10 shadow-card hover:-translate-y-0.5 transition-all"
-            >
-              <div className="shrink-0 h-12 w-12 rounded-sm bg-crimson/10 flex items-center justify-center">
-                <Award className="h-6 w-6 text-crimson" />
+              <div className="p-4 border-t border-navy-deep/10">
+                <a
+                  href={manifiestoAsset.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-navy-deep hover:text-crimson transition-colors"
+                >
+                  Abrir / descargar PDF
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
-              <div className="flex-1">
-                <div className="text-xs uppercase tracking-[0.2em] text-navy/60">Documento</div>
-                <div className="mt-1 font-display text-xl text-navy-deep">Registro del Encuentro</div>
-                <div className="mt-2 text-sm text-navy/70">Descargar PDF</div>
+            </div>
+
+            <div className="bg-white rounded-sm border border-navy-deep/10 shadow-card overflow-hidden">
+              <div className="p-5 border-b border-navy-deep/10 flex items-center gap-3">
+                <div className="shrink-0 h-10 w-10 rounded-sm bg-crimson/10 flex items-center justify-center">
+                  <Award className="h-5 w-5 text-crimson" />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-navy/60">Documento</div>
+                  <div className="font-display text-lg text-navy-deep">Registro del Encuentro</div>
+                </div>
               </div>
-              <ArrowRight className="h-5 w-5 text-navy-deep transition-transform group-hover:translate-x-1" />
-            </a>
+              <div className="relative aspect-[4/3] bg-navy-deep/5">
+                <iframe
+                  src={enfeDocAsset.url}
+                  title="Registro del Encuentro"
+                  className="absolute inset-0 h-full w-full"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 border-t border-navy-deep/10">
+                <a
+                  href={enfeDocAsset.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-navy-deep hover:text-crimson transition-colors"
+                >
+                  Abrir / descargar PDF
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
           </div>
         </FadeIn>
       </div>
