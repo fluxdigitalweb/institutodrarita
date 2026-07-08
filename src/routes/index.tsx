@@ -1058,10 +1058,10 @@ function ENFECarousel({ images }: { images: { src: string; alt: string }[] }) {
 
 function ENFE2022() {
   const images = [
-    { src: enfePanoramicaAsset.url, alt: "Panorámica del ENFE 2022 en el Monumento a la Bandera, Rosario", span: "md:col-span-2" },
-    { src: enfeGrupoAsset.url, alt: "Grupo de participantes del ENFE 2022 con la bandera Familias por la Educación", span: "" },
-    { src: enfeBanderaAsset.url, alt: "Bandera Encuentro Nacional Familias por la Educación desplegada", span: "" },
-    { src: enfe2021Asset.url, alt: "Segundo Encuentro Nacional Familias por la Educación 2021", span: "md:col-span-2" },
+    { src: enfePanoramicaAsset.url, alt: "Panorámica del ENFE 2022 en el Monumento a la Bandera, Rosario" },
+    { src: enfeGrupoAsset.url, alt: "Grupo de participantes del ENFE 2022 con la bandera Familias por la Educación" },
+    { src: enfeBanderaAsset.url, alt: "Bandera Encuentro Nacional Familias por la Educación desplegada" },
+    { src: enfe2021Asset.url, alt: "Segundo Encuentro Nacional Familias por la Educación 2021" },
   ];
   return (
     <section id="enfe-2022" className="py-28 lg:py-36 bg-beige-light/40">
