@@ -43,6 +43,8 @@ import enfePanoramicaAsset from "@/assets/enfe-2022-panoramica.jpeg.asset.json";
 import enfe2021Asset from "@/assets/enfe-2021-segundo.png.asset.json";
 import enfeDocAsset from "@/assets/enfe-2022-documento.pdf.asset.json";
 import manifiestoAsset from "@/assets/manifiesto-educacion.pdf.asset.json";
+import manifiestoPreview from "@/assets/manifiesto-preview.jpg.asset.json";
+import enfeDocPreview from "@/assets/enfe-doc-preview.jpg.asset.json";
 
 const heroImg = heroAsset.url;
 const directorImg = directorAsset.url;
@@ -1093,14 +1095,14 @@ function ENFE2022() {
                   <div className="font-display text-lg text-navy-deep">Manifiesto por la Educación</div>
                 </div>
               </div>
-              <div className="relative aspect-[4/3] bg-navy-deep/5">
-                <iframe
-                  src={manifiestoAsset.url}
-                  title="Manifiesto por la Educación"
-                  className="absolute inset-0 h-full w-full"
+              <a href={manifiestoAsset.url} target="_blank" rel="noreferrer" className="block relative aspect-[4/3] bg-navy-deep/5 overflow-hidden">
+                <img
+                  src={manifiestoPreview.url}
+                  alt="Primera página del Manifiesto por la Educación"
+                  className="absolute inset-0 h-full w-full object-cover object-top"
                   loading="lazy"
                 />
-              </div>
+              </a>
               <div className="p-4 border-t border-navy-deep/10">
                 <a
                   href={manifiestoAsset.url}
@@ -1124,14 +1126,14 @@ function ENFE2022() {
                   <div className="font-display text-lg text-navy-deep">Registro del Encuentro</div>
                 </div>
               </div>
-              <div className="relative aspect-[4/3] bg-navy-deep/5">
-                <iframe
-                  src={enfeDocAsset.url}
-                  title="Registro del Encuentro"
-                  className="absolute inset-0 h-full w-full"
+              <a href={enfeDocAsset.url} target="_blank" rel="noreferrer" className="block relative aspect-[4/3] bg-navy-deep/5 overflow-hidden">
+                <img
+                  src={enfeDocPreview.url}
+                  alt="Primera página del Registro del Encuentro"
+                  className="absolute inset-0 h-full w-full object-cover object-top"
                   loading="lazy"
                 />
-              </div>
+              </a>
               <div className="p-4 border-t border-navy-deep/10">
                 <a
                   href={enfeDocAsset.url}
