@@ -43,6 +43,8 @@ import enfePanoramicaAsset from "@/assets/enfe-2022-panoramica.jpeg.asset.json";
 import enfe2021Asset from "@/assets/enfe-2021-segundo.png.asset.json";
 import enfeDocAsset from "@/assets/enfe-2022-documento.pdf.asset.json";
 import manifiestoAsset from "@/assets/manifiesto-educacion.pdf.asset.json";
+import manifiestoPreview from "@/assets/manifiesto-preview.jpg.asset.json";
+import enfeDocPreview from "@/assets/enfe-doc-preview.jpg.asset.json";
 
 const heroImg = heroAsset.url;
 const directorImg = directorAsset.url;
