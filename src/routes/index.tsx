@@ -36,6 +36,12 @@ import video4 from "@/assets/video4.mp4.asset.json";
 import video5 from "@/assets/video5.mp4.asset.json";
 import video6 from "@/assets/training-1.mp4.asset.json";
 import video7 from "@/assets/training-2.mp4.asset.json";
+import enfeGrupoAsset from "@/assets/enfe-2022-grupo.jpeg.asset.json";
+import enfeBanderaAsset from "@/assets/enfe-2022-bandera.jpeg.asset.json";
+import enfePanoramicaAsset from "@/assets/enfe-2022-panoramica.jpeg.asset.json";
+import enfe2021Asset from "@/assets/enfe-2021-segundo.png.asset.json";
+import enfeDocAsset from "@/assets/enfe-2022-documento.pdf.asset.json";
+import manifiestoAsset from "@/assets/manifiesto-educacion.pdf.asset.json";
 
 const heroImg = heroAsset.url;
 const directorImg = directorAsset.url;
@@ -989,6 +995,87 @@ function Ubicacion() {
   );
 }
 
+/* ---------- ENFE 2022 ---------- */
+
+function ENFE2022() {
+  const images = [
+    { src: enfePanoramicaAsset.url, alt: "Panorámica del ENFE 2022 en el Monumento a la Bandera, Rosario", span: "md:col-span-2" },
+    { src: enfeGrupoAsset.url, alt: "Grupo de participantes del ENFE 2022 con la bandera Familias por la Educación", span: "" },
+    { src: enfeBanderaAsset.url, alt: "Bandera Encuentro Nacional Familias por la Educación desplegada", span: "" },
+    { src: enfe2021Asset.url, alt: "Segundo Encuentro Nacional Familias por la Educación 2021", span: "md:col-span-2" },
+  ];
+  return (
+    <section id="enfe-2022" className="py-28 lg:py-36 bg-beige-light/40">
+      <div className="container-x">
+        <FadeIn>
+          <SectionEyebrow>Octubre 2022 · Rosario</SectionEyebrow>
+          <h2 className="mt-6 font-display text-4xl lg:text-5xl text-navy-deep text-balance max-w-4xl">
+            ENFE — Encuentro Nacional Familias por la Educación
+          </h2>
+          <p className="mt-6 text-navy/70 leading-relaxed max-w-3xl">
+            En octubre de 2022 participamos del Encuentro Nacional de Familias
+            por la Educación en la ciudad de Rosario, junto al Monumento a la
+            Bandera. Un espacio de intercambio entre familias, docentes e
+            instituciones comprometidas con transformar la educación argentina.
+          </p>
+        </FadeIn>
+
+        <div className="mt-14 grid md:grid-cols-2 gap-5">
+          {images.map((img, i) => (
+            <FadeIn key={i} delay={i * 0.08} className={img.span}>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-navy-deep/10 shadow-card group">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+
+        <FadeIn delay={0.2}>
+          <div className="mt-14 grid md:grid-cols-2 gap-5">
+            <a
+              href={manifiestoAsset.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex items-start gap-5 p-7 bg-white rounded-sm border border-navy-deep/10 shadow-card hover:-translate-y-0.5 transition-all"
+            >
+              <div className="shrink-0 h-12 w-12 rounded-sm bg-crimson/10 flex items-center justify-center">
+                <Award className="h-6 w-6 text-crimson" />
+              </div>
+              <div className="flex-1">
+                <div className="text-xs uppercase tracking-[0.2em] text-navy/60">Documento</div>
+                <div className="mt-1 font-display text-xl text-navy-deep">Manifiesto por la Educación</div>
+                <div className="mt-2 text-sm text-navy/70">Descargar PDF</div>
+              </div>
+              <ArrowRight className="h-5 w-5 text-navy-deep transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href={enfeDocAsset.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group flex items-start gap-5 p-7 bg-white rounded-sm border border-navy-deep/10 shadow-card hover:-translate-y-0.5 transition-all"
+            >
+              <div className="shrink-0 h-12 w-12 rounded-sm bg-crimson/10 flex items-center justify-center">
+                <Award className="h-6 w-6 text-crimson" />
+              </div>
+              <div className="flex-1">
+                <div className="text-xs uppercase tracking-[0.2em] text-navy/60">Documento</div>
+                <div className="mt-1 font-display text-xl text-navy-deep">Registro del Encuentro</div>
+                <div className="mt-2 text-sm text-navy/70">Descargar PDF</div>
+              </div>
+              <ArrowRight className="h-5 w-5 text-navy-deep transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- CTA final ---------- */
 
 function CTAFinal() {
@@ -1221,6 +1308,7 @@ function LandingPage() {
         <Beneficios />
         <Proceso />
         <Testimonios />
+        <ENFE2022 />
         <Ubicacion />
         <CTAFinal />
       </main>
