@@ -1126,14 +1126,14 @@ function ENFE2022() {
                   <div className="font-display text-lg text-navy-deep">Registro del Encuentro</div>
                 </div>
               </div>
-              <div className="relative aspect-[4/3] bg-navy-deep/5">
-                <iframe
-                  src={enfeDocAsset.url}
-                  title="Registro del Encuentro"
-                  className="absolute inset-0 h-full w-full"
+              <a href={enfeDocAsset.url} target="_blank" rel="noreferrer" className="block relative aspect-[4/3] bg-navy-deep/5 overflow-hidden">
+                <img
+                  src={enfeDocPreview.url}
+                  alt="Primera página del Registro del Encuentro"
+                  className="absolute inset-0 h-full w-full object-cover object-top"
                   loading="lazy"
                 />
-              </div>
+              </a>
               <div className="p-4 border-t border-navy-deep/10">
                 <a
                   href={enfeDocAsset.url}
