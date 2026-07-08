@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useScroll, useTransform, animate } from "framer-motion";
+import { motion, useInView, useScroll, useTransform, animate, AnimatePresence } from "framer-motion";
 import {
   Brain,
   HeartPulse,
