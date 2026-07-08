@@ -1021,20 +1021,7 @@ function ENFE2022() {
           </p>
         </FadeIn>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-5">
-          {images.map((img, i) => (
-            <FadeIn key={i} delay={i * 0.08} className={img.span}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-navy-deep/10 shadow-card group">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+        <ENFECarousel images={images} />
 
         <FadeIn delay={0.2}>
           <div className="mt-14 grid md:grid-cols-2 gap-5">
