@@ -1095,14 +1095,14 @@ function ENFE2022() {
                   <div className="font-display text-lg text-navy-deep">Manifiesto por la Educación</div>
                 </div>
               </div>
-              <div className="relative aspect-[4/3] bg-navy-deep/5">
-                <iframe
-                  src={manifiestoAsset.url}
-                  title="Manifiesto por la Educación"
-                  className="absolute inset-0 h-full w-full"
+              <a href={manifiestoAsset.url} target="_blank" rel="noreferrer" className="block relative aspect-[4/3] bg-navy-deep/5 overflow-hidden">
+                <img
+                  src={manifiestoPreview.url}
+                  alt="Primera página del Manifiesto por la Educación"
+                  className="absolute inset-0 h-full w-full object-cover object-top"
                   loading="lazy"
                 />
-              </div>
+              </a>
               <div className="p-4 border-t border-navy-deep/10">
                 <a
                   href={manifiestoAsset.url}
