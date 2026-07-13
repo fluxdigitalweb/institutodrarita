@@ -38,6 +38,15 @@
   --color-crimson: var(--crimson);
   --color-ink: var(--ink);
 
+  /* Logo palette */
+  --color-logo-cream: var(--logo-cream);
+  --color-logo-beige: var(--logo-beige);
+  --color-logo-brown: var(--logo-brown);
+  --color-logo-green: var(--logo-green);
+  --color-logo-green-dark: var(--logo-green-dark);
+  --color-logo-orange: var(--logo-orange);
+  --color-logo-gold: var(--logo-gold);
+
   --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
