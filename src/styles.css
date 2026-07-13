@@ -65,6 +65,15 @@
   --crimson: oklch(0.47 0.18 27);       /* #B71C1C */
   --ink: oklch(0.18 0.02 260);
 
+  /* Logo palette */
+  --logo-cream: oklch(0.96 0.02 80);     /* #F5F0E8 */
+  --logo-beige: oklch(0.82 0.045 78);     /* #D6C6B7 */
+  --logo-brown: oklch(0.42 0.07 45);      /* #6B4A3A */
+  --logo-green: oklch(0.48 0.09 138);     /* #4A6741 */
+  --logo-green-dark: oklch(0.38 0.08 138);/* #3A5333 */
+  --logo-orange: oklch(0.62 0.16 45);     /* #E0704A */
+  --logo-gold: oklch(0.80 0.12 85);       /* #F4C95D */
+
   --background: oklch(1 0 0);
   --foreground: var(--ink);
   --card: oklch(1 0 0);
