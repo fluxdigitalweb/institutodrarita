@@ -46,6 +46,7 @@
   --color-logo-green-dark: var(--logo-green-dark);
   --color-logo-orange: var(--logo-orange);
   --color-logo-gold: var(--logo-gold);
+  --color-logo-blue: var(--logo-blue);
 
   --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
