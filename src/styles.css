@@ -46,6 +46,7 @@
   --color-logo-green-dark: var(--logo-green-dark);
   --color-logo-orange: var(--logo-orange);
   --color-logo-gold: var(--logo-gold);
+  --color-logo-blue: var(--logo-blue);
 
   --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -73,6 +74,8 @@
   --logo-green-dark: oklch(0.38 0.08 138);/* #3A5333 */
   --logo-orange: oklch(0.62 0.16 45);     /* #E0704A */
   --logo-gold: oklch(0.80 0.12 85);       /* #F4C95D */
+  --logo-blue: oklch(0.35 0.08 250);       /* #1E3A5F */
+
 
   --background: oklch(1 0 0);
   --foreground: var(--ink);
