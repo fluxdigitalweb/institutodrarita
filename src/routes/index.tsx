@@ -221,18 +221,18 @@ function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-navy-deep/95 backdrop-blur-md border-b border-white/5 py-3"
+          ? "bg-logo-cream/95 backdrop-blur-md border-b border-logo-brown/10 py-3"
           : "bg-transparent py-5"
       }`}
     >
       <div className="container-x flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-3 text-white">
+        <a href="#top" className="flex items-center gap-3 text-logo-brown">
           <div className="flex h-11 w-11 items-center justify-center">
             <img src={logoImg} alt="Logo Instituto" className="h-11 w-11 object-contain" />
           </div>
           <div className="leading-tight">
             <div className="font-display text-lg">Instituto de Apoyo Académico</div>
-            <div className="text-[10px] uppercase tracking-[0.25em] text-beige/80">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-logo-green/80">
               Est. 2000 · Santiago del Estero
             </div>
           </div>
@@ -243,7 +243,7 @@ function Navbar() {
             <a
               key={n.href}
               href={n.href}
-              className="text-sm text-white/80 hover:text-beige transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-beige after:transition-all hover:after:w-full"
+              className="text-sm text-logo-brown/80 hover:text-logo-green transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-logo-green after:transition-all hover:after:w-full"
             >
               {n.label}
             </a>
@@ -255,7 +255,7 @@ function Navbar() {
             href={WA_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-sm border border-beige/50 px-5 py-2.5 text-xs uppercase tracking-[0.2em] text-beige hover:bg-beige hover:text-navy-deep transition-all"
+            className="inline-flex items-center gap-2 rounded-sm border border-logo-green/50 px-5 py-2.5 text-xs uppercase tracking-[0.2em] text-logo-green hover:bg-logo-green hover:text-logo-cream transition-all"
           >
             <MessageCircle className="h-3.5 w-3.5" />
             Consultar
@@ -264,7 +264,7 @@ function Navbar() {
 
         <button
           onClick={() => setOpen((o) => !o)}
-          className="lg:hidden text-white p-2"
+          className="lg:hidden text-logo-brown p-2"
           aria-label="Menú"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -272,14 +272,14 @@ function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-navy-deep border-t border-white/5">
+        <div className="lg:hidden bg-logo-cream border-t border-logo-brown/10">
           <div className="container-x py-6 flex flex-col gap-4">
             {NAV.map((n) => (
               <a
                 key={n.href}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="text-white/80 hover:text-beige py-2 border-b border-white/5 text-sm"
+                className="text-logo-brown/80 hover:text-logo-green py-2 border-b border-logo-brown/10 text-sm"
               >
                 {n.label}
               </a>
@@ -288,7 +288,7 @@ function Navbar() {
               href={WA_URL}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-sm bg-beige px-5 py-3 text-xs uppercase tracking-[0.2em] text-navy-deep"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-sm bg-logo-green px-5 py-3 text-xs uppercase tracking-[0.2em] text-logo-cream"
             >
               <MessageCircle className="h-4 w-4" /> Consultar por WhatsApp
             </a>
