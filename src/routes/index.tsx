@@ -301,7 +301,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen bg-logo-cream text-logo-brown overflow-hidden pt-28 lg:pt-0 flex items-center"
+      className="relative min-h-screen bg-logo-cream text-logo-blue overflow-hidden pt-28 lg:pt-0 flex items-center"
     >
       {/* Vignette */}
       <div className="absolute inset-0 bg-gradient-to-br from-logo-cream via-logo-cream/95 to-logo-beige/40" />
@@ -312,7 +312,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 rounded-full border border-logo-brown/20 bg-white/[0.03] px-4 py-1.5 text-[11px] uppercase tracking-[0.25em] text-logo-brown"
+            className="inline-flex items-center gap-2 rounded-full border border-logo-blue/20 bg-white/[0.03] px-4 py-1.5 text-[11px] uppercase tracking-[0.25em] text-logo-blue"
           >
             <Award className="h-3.5 w-3.5" />
             25 años formando aspirantes
@@ -325,14 +325,14 @@ function Hero() {
             className="mt-8 font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.98] text-balance"
           >
             Instituto de{" "}
-            <span className="italic text-logo-green">Apoyo Académico</span>
+            <span className="italic text-logo-blue">Apoyo Académico</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="mt-6 text-sm uppercase tracking-[0.3em] text-logo-brown/80"
+            className="mt-6 text-sm uppercase tracking-[0.3em] text-logo-blue/80"
           >
             Un espacio de nivelación y entrenamiento
           </motion.p>
@@ -341,7 +341,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-6 max-w-xl text-base lg:text-lg text-logo-brown/70 leading-relaxed"
+            className="mt-6 max-w-xl text-base lg:text-lg text-logo-blue/70 leading-relaxed"
           >
             Preparación especializada para el ingreso a las fuerzas de seguridad.
             Programa integral que forma aspirantes capaces de superar:
@@ -351,7 +351,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="mt-5 space-y-2 text-logo-brown/80 text-sm"
+            className="mt-5 space-y-2 text-logo-blue/80 text-sm"
           >
             {[
               "Exámenes intelectuales",
@@ -359,7 +359,7 @@ function Hero() {
               "Pruebas físicas obligatorias",
             ].map((t) => (
               <li key={t} className="flex items-center gap-3">
-                <span className="h-px w-6 bg-logo-green/60" />
+                <span className="h-px w-6 bg-logo-blue/60" />
                 {t}
               </li>
             ))}
@@ -375,7 +375,7 @@ function Hero() {
               href={WA_URL_INFO}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-sm bg-logo-orange px-8 py-4 text-xs uppercase tracking-[0.2em] text-logo-cream hover:bg-logo-brown transition-all hover:-translate-y-0.5 shadow-[0_15px_40px_-15px_color-mix(in_oklab,var(--logo-orange)_80%,transparent)]"
+              className="group inline-flex items-center gap-2 rounded-sm bg-logo-blue px-8 py-4 text-xs uppercase tracking-[0.2em] text-logo-cream hover:bg-logo-blue/90 transition-all hover:-translate-y-0.5 shadow-[0_15px_40px_-15px_color-mix(in_oklab,var(--logo-blue)_80%,transparent)]"
             >
               Solicitar información
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -384,7 +384,7 @@ function Hero() {
               href={WA_URL_ENTREVISTA}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-sm border border-logo-brown/25 px-8 py-4 text-xs uppercase tracking-[0.2em] text-logo-brown hover:border-logo-orange hover:text-logo-orange transition-all"
+              className="group inline-flex items-center gap-2 rounded-sm border border-logo-blue/25 px-8 py-4 text-xs uppercase tracking-[0.2em] text-logo-blue hover:border-logo-blue hover:text-logo-blue transition-all"
             >
               Agendar entrevista
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -407,7 +407,7 @@ function Hero() {
               height={1600}
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-logo-brown/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-logo-blue/70 via-transparent to-transparent" />
             <div className="absolute inset-0 ring-1 ring-inset ring-logo-beige/40" />
           </div>
           {/* Floating stat card */}
@@ -415,13 +415,13 @@ function Hero() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="absolute -left-6 bottom-10 w-64 bg-white text-logo-brown p-6 rounded-sm shadow-elegant"
+            className="absolute -left-6 bottom-10 w-64 bg-white text-logo-blue p-6 rounded-sm shadow-elegant"
           >
-            <div className="text-[10px] uppercase tracking-[0.25em] text-logo-green/60">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-logo-blue/60">
               Índice de resultados
             </div>
             <div className="mt-2 font-display text-4xl">+1000</div>
-            <div className="mt-1 text-xs text-logo-brown/70">
+            <div className="mt-1 text-xs text-logo-blue/70">
               Aspirantes preparados en 25 años de trayectoria.
             </div>
           </motion.div>
@@ -429,9 +429,9 @@ function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-logo-brown/60">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-logo-blue/60">
         <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
-        <div className="h-10 w-px bg-logo-brown/40 animate-pulse" />
+        <div className="h-10 w-px bg-logo-blue/40 animate-pulse" />
       </div>
     </section>
   );
