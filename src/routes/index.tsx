@@ -27,13 +27,13 @@ import purposeAsset from "@/assets/clase-grupo.jpg.asset.json";
 import entrenamientoAsset from "@/assets/entrenamiento.jpg.asset.json";
 import logoAsset from "@/assets/logoacademia.png.asset.json";
 import groupParkAsset from "@/assets/group-park.jpeg.asset.json";
-import trainingConesAsset from "@/assets/training-cones.jpeg.asset.json";
+
 import flyerAsset from "@/assets/grupo-2026.jpeg.asset.json";
 import clasePizarronAsset from "@/assets/clase-pizarron.png.asset.json";
 import video1 from "@/assets/video1.mp4.asset.json";
 import video2 from "@/assets/video2.mp4.asset.json";
 import video3 from "@/assets/video3.mp4.asset.json";
-import video4 from "@/assets/video4.mp4.asset.json";
+
 import video5 from "@/assets/video5.mp4.asset.json";
 import video6 from "@/assets/training-1.mp4.asset.json";
 import video7 from "@/assets/training-2.mp4.asset.json";
@@ -53,8 +53,8 @@ const purposeImg = purposeAsset.url;
 const entrenamientoImg = entrenamientoAsset.url;
 const logoImg = logoAsset.url;
 const flyerImg = flyerAsset.url;
-const GALLERY_VIDEOS = [video1.url, video2.url, video3.url, video4.url];
-const GALLERY_IMAGES = [purposeAsset.url, groupParkAsset.url, trainingConesAsset.url, clasePizarronAsset.url];
+const GALLERY_VIDEOS = [video1.url, video2.url, video3.url];
+const GALLERY_IMAGES = [purposeAsset.url, groupParkAsset.url, clasePizarronAsset.url];
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
