@@ -1330,10 +1330,10 @@ function Galeria() {
           ))}
         </div>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
           {GALLERY_VIDEOS.map((src, i) => (
             <FadeIn key={src} delay={i * 0.06}>
-              <div className="relative aspect-video overflow-hidden rounded-sm bg-navy-deep ring-1 ring-inset ring-beige/20">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-navy-deep ring-1 ring-inset ring-beige/20">
                 <video
                   src={src}
                   className="h-full w-full object-cover"
