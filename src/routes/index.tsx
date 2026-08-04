@@ -37,10 +37,12 @@ import video3 from "@/assets/video3.mp4.asset.json";
 import video5 from "@/assets/video5.mp4.asset.json";
 import video6 from "@/assets/training-1.mp4.asset.json";
 import video7 from "@/assets/training-2.mp4.asset.json";
-import enfeGrupoAsset from "@/assets/enfe-2022-grupo.webp.asset.json";
-import enfeBanderaAsset from "@/assets/enfe-2022-bandera.webp.asset.json";
-import enfePanoramicaAsset from "@/assets/enfe-2022-panoramica.webp.asset.json";
-import enfe2021Asset from "@/assets/enfe-2021-segundo.webp.asset.json";
+import carouselAsset from "@/assets/carrousel.jpeg.asset.json";
+import carousel1Asset from "@/assets/carrousel1.jpeg.asset.json";
+import carousel2Asset from "@/assets/carrousel2.jpeg.asset.json";
+import carousel3Asset from "@/assets/carrousel3.jpeg.asset.json";
+import carousel4Asset from "@/assets/carrousel4.jpeg.asset.json";
+import moduloIntelectualAsset from "@/assets/modulointelectual.jpeg.asset.json";
 import enfeDocAsset from "@/assets/enfe-2022-documento.pdf.asset.json";
 import manifiestoAsset from "@/assets/manifiesto-educacion.pdf.asset.json";
 import manifiestoPreview from "@/assets/manifiesto-preview.jpg.asset.json";
@@ -470,6 +472,7 @@ const SERVICES = [
     icon: Brain,
     title: "Evaluación intelectual",
     text: "Preparación académica intensiva para exámenes de ingreso. Coordinadora: Dra. Rita Artaza · M.P. N° 5275.",
+    image: moduloIntelectualAsset.url,
   },
   {
     icon: HeartPulse,
@@ -508,7 +511,16 @@ function Servicios() {
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((s, i) => (
             <FadeIn key={s.title} delay={i * 0.08}>
-              <div className="group relative h-full bg-beige-light/40 border border-beige/40 rounded-sm p-8 transition-all duration-500 hover:bg-navy-deep hover:border-navy-deep hover:-translate-y-2 hover:shadow-elegant">
+              <div className="group relative h-full overflow-hidden bg-beige-light/40 border border-beige/40 rounded-sm transition-all duration-500 hover:bg-navy-deep hover:border-navy-deep hover:-translate-y-2 hover:shadow-elegant">
+                {s.image && (
+                  <img
+                    src={s.image}
+                    alt="Material del módulo intelectual del Instituto Juan B. Alberdi"
+                    className="aspect-[4/3] w-full object-cover"
+                    loading="lazy"
+                  />
+                )}
+                <div className="p-8">
                 <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-navy-deep text-beige transition-colors duration-500 group-hover:bg-beige group-hover:text-navy-deep">
                   <s.icon className="h-5 w-5" />
                 </div>
@@ -521,6 +533,7 @@ function Servicios() {
                 <div className="mt-8 h-px w-8 bg-navy-deep/30 transition-all duration-500 group-hover:w-full group-hover:bg-beige" />
                 <div className="mt-4 text-[10px] uppercase tracking-[0.25em] text-navy/50 transition-colors group-hover:text-beige">
                   0{i + 1} · Módulo
+                </div>
                 </div>
               </div>
             </FadeIn>
@@ -670,7 +683,9 @@ function Direccion() {
                 <div className="text-[10px] uppercase tracking-[0.3em] text-beige">
                   Directora
                 </div>
-                <div className="mt-1 font-display text-3xl">Dra. Rita Artaza</div>
+                <div className="mt-2 inline-block border-l-4 border-beige bg-navy-deep/90 px-4 py-2 font-display text-3xl font-semibold shadow-lg lg:text-4xl">
+                  Dra. Rita Artaza
+                </div>
               </div>
             </div>
 
@@ -1080,10 +1095,11 @@ function ENFECarousel({ images }: { images: { src: string; alt: string }[] }) {
 
 function ENFE2022() {
   const images = [
-    { src: enfePanoramicaAsset.url, alt: "Panorámica del ENFE 2022 en el Monumento a la Bandera, Rosario" },
-    { src: enfeGrupoAsset.url, alt: "Grupo de participantes del ENFE 2022 con la bandera Familias por la Educación" },
-    { src: enfeBanderaAsset.url, alt: "Bandera Encuentro Nacional Familias por la Educación desplegada" },
-    { src: enfe2021Asset.url, alt: "Segundo Encuentro Nacional Familias por la Educación 2021" },
+    { src: carouselAsset.url, alt: "Participación de Familias por la Educación en Rosario" },
+    { src: carousel1Asset.url, alt: "Representantes junto al espacio Argentinos por la Educación" },
+    { src: carousel2Asset.url, alt: "Familias por la Educación Santiago del Estero" },
+    { src: carousel3Asset.url, alt: "Representantes de Santiago del Estero en el Monumento a la Bandera" },
+    { src: carousel4Asset.url, alt: "Participantes con la bandera del Encuentro Nacional Familias por la Educación" },
   ];
   return (
     <section id="enfe-2022" className="py-28 lg:py-36 bg-beige-light/40">
