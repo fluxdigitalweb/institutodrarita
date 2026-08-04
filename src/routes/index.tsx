@@ -23,7 +23,7 @@ import {
 import heroAsset from "@/assets/aula-pizarron.jpg.asset.json";
 import directorAsset from "@/assets/directora.jpg.asset.json";
 import kureszaAsset from "@/assets/kuresza.jpeg.asset.json";
-import purposeAsset from "@/assets/clase-grupo.jpg.asset.json";
+import purposeAsset from "@/assets/proposito-egresados-2026.jpeg.asset.json";
 import entrenamientoAsset from "@/assets/entrenamiento.jpg.asset.json";
 import logoAsset from "@/assets/logoacademia.png.asset.json";
 import groupParkAsset from "@/assets/group-park.jpeg.asset.json";
@@ -436,20 +436,20 @@ function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-logo-blue/70 via-transparent to-transparent" />
             <div className="absolute inset-0 ring-1 ring-inset ring-logo-beige/40" />
           </div>
-          {/* Floating stat card */}
+          {/* Floating logo card */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="absolute -left-6 bottom-10 w-64 bg-white text-logo-blue p-6 rounded-sm shadow-elegant"
+            className="absolute -left-6 bottom-10 flex h-48 w-64 items-center justify-center overflow-hidden rounded-sm bg-white p-4 shadow-elegant"
           >
-            <div className="text-[10px] uppercase tracking-[0.25em] text-logo-blue/60">
-              Índice de resultados
-            </div>
-            <div className="mt-2 font-display text-4xl">+1000</div>
-            <div className="mt-1 text-xs text-logo-blue/70">
-              Aspirantes preparados en 25 años de trayectoria.
-            </div>
+            <img
+              src={logoImg}
+              alt="Logo del Instituto Juan B. Alberdi"
+              width={320}
+              height={320}
+              className="h-full w-full object-contain"
+            />
           </motion.div>
         </motion.div>
       </div>
@@ -597,7 +597,7 @@ function Proposito() {
           <div className="relative aspect-[5/4] overflow-hidden rounded-sm">
             <img
               src={purposeImg}
-              alt="Aula institucional"
+              alt="Egresados junto al equipo del Instituto Juan B. Alberdi"
               width={1280}
               height={1024}
               loading="lazy"
