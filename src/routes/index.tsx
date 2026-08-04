@@ -61,9 +61,27 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        property: "og:image",
-        content:
-          "https://id-preview--787a051d-f271-4a24-a860-fa0fa3a5a0d5.lovable.app/og.jpg",
+        title: "Instituto Juan B. Alberdi | Apoyo Académico",
+      },
+      {
+        name: "description",
+        content: "Preparación integral para el ingreso a las fuerzas de seguridad en Argentina.",
+      },
+      {
+        property: "og:title",
+        content: "Instituto Juan B. Alberdi | Apoyo Académico",
+      },
+      {
+        property: "og:description",
+        content: "Preparación integral para el ingreso a las fuerzas de seguridad en Argentina.",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
       },
     ],
   }),
@@ -308,6 +326,14 @@ function Hero() {
 
       <div className="container-x relative grid lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-16 items-center py-16 lg:py-32">
         <div className="min-w-0">
+          <motion.img
+            src={logoImg}
+            alt="Logo del Instituto Juan B. Alberdi"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-6 h-24 w-24 object-contain sm:h-28 sm:w-28"
+          />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -324,8 +350,8 @@ function Hero() {
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="mt-8 font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.98] text-balance"
           >
-            Instituto de{" "}
-            <span className="italic text-logo-blue">Apoyo Académico</span>
+            Instituto Juan B. Alberdi{" "}
+            <span className="block italic text-logo-blue">Apoyo Académico</span>
           </motion.h1>
 
           <motion.p
@@ -443,7 +469,7 @@ const SERVICES = [
   {
     icon: Brain,
     title: "Evaluación intelectual",
-    text: "Preparación académica intensiva para exámenes de ingreso.",
+    text: "Preparación académica intensiva para exámenes de ingreso. Coordinadora: Dra. Rita Artaza · M.P. N° 5275.",
   },
   {
     icon: HeartPulse,
@@ -729,15 +755,15 @@ function OrientacionVocacional() {
 
             <div className="p-8 lg:p-14">
               <div className="inline-flex items-center gap-2 text-crimson text-[11px] uppercase tracking-[0.25em]">
-                <Brain className="h-3.5 w-3.5" /> Evaluación · Diagnóstico · Tratamiento
+                <Brain className="h-3.5 w-3.5" /> Clases de acompañamiento integral
               </div>
               <h3 className="mt-4 font-display text-3xl lg:text-4xl text-navy-deep leading-tight">
                 Un acompañamiento clínico y cognitivo para el aspirante integral.
               </h3>
               <p className="mt-5 text-navy/70 leading-relaxed">
-                Evaluación, diagnóstico y tratamiento orientados a fortalecer las
-                capacidades intelectuales, emocionales y vocacionales necesarias
-                para afrontar el proceso de ingreso.
+                Clases orientadas a fortalecer las capacidades intelectuales,
+                emocionales y vocacionales necesarias para afrontar el proceso de
+                ingreso.
               </p>
 
               <div className="mt-8">
