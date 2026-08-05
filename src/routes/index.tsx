@@ -329,8 +329,6 @@ function Hero() {
       <div className="container-x relative grid lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-16 items-center py-16 lg:py-32">
         <div className="min-w-0">
           <motion.div
-
-          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
