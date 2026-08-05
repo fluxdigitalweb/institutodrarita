@@ -68,15 +68,15 @@ const flyerImg = flyerAsset.url;
 const GALLERY_VIDEOS = [video1.url, video2.url, video3.url];
 
 const ALUMNOS_SLIDES = [
-  { src: alumnos14Asset.url, caption: "Egresados 2026 · Escuela de Policía" },
-  { src: alumnos22Asset.url, caption: "Acto de egreso · Orgullo Alberdi" },
-  { src: alumnos23Asset.url, caption: "Nuestros aspirantes, hoy cadetes" },
-  { src: alumnos19Asset.url, caption: "Ingresantes acompañados por la Dra. Artaza" },
-  { src: alumnos18Asset.url, caption: "El éxito ocurre cuando tus sueños son más grandes" },
-  { src: alumnos21Asset.url, caption: "Grupo de cursada · Sede del instituto" },
-  { src: alumnos20Asset.url, caption: "Cierre de ciclo con los alumnos" },
-  { src: alumnos16Asset.url, caption: "Equipo docente en jornada institucional" },
-  { src: alumnos17Asset.url, caption: "Centro Cultural Sixto Vecino" },
+  alumnos14Asset.url,
+  alumnos22Asset.url,
+  alumnos23Asset.url,
+  alumnos19Asset.url,
+  alumnos18Asset.url,
+  alumnos21Asset.url,
+  alumnos20Asset.url,
+  alumnos16Asset.url,
+  alumnos17Asset.url,
 ];
 
 const GALLERY_IMAGES = [purposeAsset.url, groupParkAsset.url, clasePizarronAsset.url];
@@ -513,27 +513,30 @@ function Servicios() {
             <FadeIn key={s.title} delay={i * 0.08}>
               <div className="group relative h-full overflow-hidden bg-beige-light/40 border border-beige/40 rounded-sm transition-all duration-500 hover:bg-navy-deep hover:border-navy-deep hover:-translate-y-2 hover:shadow-elegant">
                 {s.image && (
-                  <img
-                    src={s.image}
-                    alt="Material del módulo intelectual del Instituto Juan B. Alberdi"
-                    className="aspect-[4/3] w-full object-cover"
-                    loading="lazy"
-                  />
+                  <div className="absolute inset-0">
+                    <img
+                      src={s.image}
+                      alt="Material del módulo intelectual del Instituto Juan B. Alberdi"
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-navy-deep/80 transition-all duration-500 group-hover:bg-navy-deep/85" />
+                  </div>
                 )}
-                <div className="p-8">
-                <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-navy-deep text-beige transition-colors duration-500 group-hover:bg-beige group-hover:text-navy-deep">
-                  <s.icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-8 font-display text-2xl text-navy-deep transition-colors group-hover:text-white">
-                  {s.title}
-                </h3>
-                <p className="mt-3 text-sm text-navy/70 leading-relaxed transition-colors group-hover:text-white/70">
-                  {s.text}
-                </p>
-                <div className="mt-8 h-px w-8 bg-navy-deep/30 transition-all duration-500 group-hover:w-full group-hover:bg-beige" />
-                <div className="mt-4 text-[10px] uppercase tracking-[0.25em] text-navy/50 transition-colors group-hover:text-beige">
-                  0{i + 1} · Módulo
-                </div>
+                <div className="relative p-8">
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-sm transition-colors duration-500 ${s.image ? "bg-beige text-navy-deep group-hover:bg-beige group-hover:text-navy-deep" : "bg-navy-deep text-beige group-hover:bg-beige group-hover:text-navy-deep"}`}>
+                    <s.icon className="h-5 w-5" />
+                  </div>
+                  <h3 className={`mt-8 font-display text-2xl transition-colors ${s.image ? "text-white" : "text-navy-deep group-hover:text-white"}`}>
+                    {s.title}
+                  </h3>
+                  <p className={`mt-3 text-sm leading-relaxed transition-colors ${s.image ? "text-white/80" : "text-navy/70 group-hover:text-white/70"}`}>
+                    {s.text}
+                  </p>
+                  <div className={`mt-8 h-px w-8 transition-all duration-500 group-hover:w-full ${s.image ? "bg-beige/40 group-hover:bg-beige" : "bg-navy-deep/30 group-hover:bg-beige"}`} />
+                  <div className={`mt-4 text-[10px] uppercase tracking-[0.25em] transition-colors ${s.image ? "text-white/60 group-hover:text-beige" : "text-navy/50 group-hover:text-beige"}`}>
+                    0{i + 1} · Módulo
+                  </div>
                 </div>
               </div>
             </FadeIn>
@@ -1434,9 +1437,9 @@ function AlumnosCarousel() {
               animate={{ x: `calc(${-index} * (100% / 3) - ${index} * 1.25rem)` }}
               transition={{ type: "spring", stiffness: 90, damping: 20 }}
             >
-              {ALUMNOS_SLIDES.map((s, i) => (
+              {ALUMNOS_SLIDES.map((src, i) => (
                 <div
-                  key={s.src}
+                  key={src}
                   className="relative shrink-0 basis-full sm:basis-[calc(50%-0.625rem)] lg:basis-[calc(33.333%-0.834rem)]"
                 >
                   <div
@@ -1445,15 +1448,12 @@ function AlumnosCarousel() {
                     }`}
                   >
                     <img
-                      src={s.src}
-                      alt={s.caption}
+                      src={src}
+                      alt={`Foto de alumnos ${i + 1}`}
                       loading="lazy"
                       className="h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-logo-blue/80 via-logo-blue/10 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <p className="text-xs uppercase tracking-[0.18em] text-logo-cream">{s.caption}</p>
-                    </div>
+                    <div className="absolute inset-0 ring-1 ring-inset ring-logo-blue/10" />
                   </div>
                 </div>
               ))}
@@ -1462,9 +1462,9 @@ function AlumnosCarousel() {
 
           <div className="mt-8 flex items-center justify-between gap-6">
             <div className="flex gap-2">
-              {ALUMNOS_SLIDES.map((s, i) => (
+              {ALUMNOS_SLIDES.map((src, i) => (
                 <button
-                  key={s.src}
+                  key={src}
                   onClick={() => setIndex(i)}
                   aria-label={`Ir a la foto ${i + 1}`}
                   className={`h-1.5 rounded-full transition-all ${
