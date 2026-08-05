@@ -438,21 +438,6 @@ function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-logo-blue/70 via-transparent to-transparent" />
             <div className="absolute inset-0 ring-1 ring-inset ring-logo-beige/40" />
           </div>
-          {/* Floating logo card */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="absolute -left-6 bottom-10 flex h-48 w-64 items-center justify-center overflow-hidden rounded-sm bg-white p-4 shadow-elegant"
-          >
-            <img
-              src={logoImg}
-              alt="Logo del Instituto Juan B. Alberdi"
-              width={320}
-              height={320}
-              className="h-full w-full object-contain"
-            />
-          </motion.div>
         </motion.div>
       </div>
 
