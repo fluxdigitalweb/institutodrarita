@@ -26,6 +26,16 @@ import kureszaAsset from "@/assets/kuresza.jpeg.asset.json";
 import purposeAsset from "@/assets/proposito-egresados-2026.jpeg.asset.json";
 import entrenamientoAsset from "@/assets/entrenamiento.jpg.asset.json";
 import logoAsset from "@/assets/logoacademia.png.asset.json";
+import alumnos14Asset from "@/assets/alumnos-14.jpeg.asset.json";
+import alumnos16Asset from "@/assets/alumnos-16.jpeg.asset.json";
+import alumnos17Asset from "@/assets/alumnos-17.jpeg.asset.json";
+import alumnos18Asset from "@/assets/alumnos-18.jpeg.asset.json";
+import alumnos19Asset from "@/assets/alumnos-19.jpeg.asset.json";
+import alumnos20Asset from "@/assets/alumnos-20.jpeg.asset.json";
+import alumnos21Asset from "@/assets/alumnos-21.jpeg.asset.json";
+import alumnos22Asset from "@/assets/alumnos-22.jpeg.asset.json";
+import alumnos23Asset from "@/assets/alumnos-23.jpeg.asset.json";
+
 import groupParkAsset from "@/assets/group-park.jpeg.asset.json";
 
 import flyerAsset from "@/assets/grupo-2026.jpeg.asset.json";
@@ -56,6 +66,19 @@ const entrenamientoImg = entrenamientoAsset.url;
 const logoImg = logoAsset.url;
 const flyerImg = flyerAsset.url;
 const GALLERY_VIDEOS = [video1.url, video2.url, video3.url];
+
+const ALUMNOS_SLIDES = [
+  { src: alumnos14Asset.url, caption: "Egresados 2026 · Escuela de Policía" },
+  { src: alumnos22Asset.url, caption: "Acto de egreso · Orgullo Alberdi" },
+  { src: alumnos23Asset.url, caption: "Nuestros aspirantes, hoy cadetes" },
+  { src: alumnos19Asset.url, caption: "Ingresantes acompañados por la Dra. Artaza" },
+  { src: alumnos18Asset.url, caption: "El éxito ocurre cuando tus sueños son más grandes" },
+  { src: alumnos21Asset.url, caption: "Grupo de cursada · Sede del instituto" },
+  { src: alumnos20Asset.url, caption: "Cierre de ciclo con los alumnos" },
+  { src: alumnos16Asset.url, caption: "Equipo docente en jornada institucional" },
+  { src: alumnos17Asset.url, caption: "Centro Cultural Sixto Vecino" },
+];
+
 const GALLERY_IMAGES = [purposeAsset.url, groupParkAsset.url, clasePizarronAsset.url];
 
 export const Route = createFileRoute("/")({
@@ -1376,6 +1399,103 @@ function Galeria() {
 
 
 
+
+/* ---------- Nuestros alumnos ---------- */
+
+function AlumnosCarousel() {
+  const [index, setIndex] = useState(0);
+  const total = ALUMNOS_SLIDES.length;
+  const go = (d: number) => setIndex((i) => (i + d + total) % total);
+
+  useEffect(() => {
+    const t = setInterval(() => setIndex((i) => (i + 1) % total), 4500);
+    return () => clearInterval(t);
+  }, [total]);
+
+  return (
+    <section id="alumnos" className="py-28 lg:py-36 bg-logo-cream text-logo-blue overflow-hidden">
+      <div className="container-x">
+        <FadeIn>
+          <div className="max-w-2xl">
+            <SectionEyebrow>Nuestros alumnos</SectionEyebrow>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl text-balance">
+              Historias que hoy visten uniforme.
+            </h2>
+            <p className="mt-5 text-logo-blue/70 leading-relaxed">
+              Aspirantes que confiaron en el instituto y hoy forman parte de las fuerzas de seguridad.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="relative mt-14">
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-5"
+              animate={{ x: `calc(${-index} * (100% / 3) - ${index} * 1.25rem)` }}
+              transition={{ type: "spring", stiffness: 90, damping: 20 }}
+            >
+              {ALUMNOS_SLIDES.map((s, i) => (
+                <div
+                  key={s.src}
+                  className="relative shrink-0 basis-full sm:basis-[calc(50%-0.625rem)] lg:basis-[calc(33.333%-0.834rem)]"
+                >
+                  <div
+                    className={`relative aspect-[4/5] overflow-hidden rounded-sm transition-all duration-500 ${
+                      i === index ? "ring-2 ring-logo-blue/50" : "ring-1 ring-logo-blue/15 opacity-80"
+                    }`}
+                  >
+                    <img
+                      src={s.src}
+                      alt={s.caption}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-logo-blue/80 via-logo-blue/10 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <p className="text-xs uppercase tracking-[0.18em] text-logo-cream">{s.caption}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          <div className="mt-8 flex items-center justify-between gap-6">
+            <div className="flex gap-2">
+              {ALUMNOS_SLIDES.map((s, i) => (
+                <button
+                  key={s.src}
+                  onClick={() => setIndex(i)}
+                  aria-label={`Ir a la foto ${i + 1}`}
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === index ? "w-8 bg-logo-blue" : "w-3 bg-logo-blue/30"
+                  }`}
+                />
+              ))}
+            </div>
+            <div className="flex gap-3">
+              <button
+                onClick={() => go(-1)}
+                aria-label="Anterior"
+                className="grid h-11 w-11 place-items-center rounded-full border border-logo-blue/25 text-logo-blue hover:bg-logo-blue hover:text-logo-cream transition-colors"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => go(1)}
+                aria-label="Siguiente"
+                className="grid h-11 w-11 place-items-center rounded-full border border-logo-blue/25 text-logo-blue hover:bg-logo-blue hover:text-logo-cream transition-colors"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function LandingPage() {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
@@ -1392,6 +1512,7 @@ function LandingPage() {
         <Servicios />
         <Diferenciales />
         <Galeria />
+        <AlumnosCarousel />
         <Proposito />
         <Direccion />
         <OrientacionVocacional />
