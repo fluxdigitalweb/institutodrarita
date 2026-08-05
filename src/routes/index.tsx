@@ -1437,9 +1437,9 @@ function AlumnosCarousel() {
               animate={{ x: `calc(${-index} * (100% / 3) - ${index} * 1.25rem)` }}
               transition={{ type: "spring", stiffness: 90, damping: 20 }}
             >
-              {ALUMNOS_SLIDES.map((s, i) => (
+              {ALUMNOS_SLIDES.map((src, i) => (
                 <div
-                  key={s.src}
+                  key={src}
                   className="relative shrink-0 basis-full sm:basis-[calc(50%-0.625rem)] lg:basis-[calc(33.333%-0.834rem)]"
                 >
                   <div
@@ -1448,15 +1448,12 @@ function AlumnosCarousel() {
                     }`}
                   >
                     <img
-                      src={s.src}
-                      alt={s.caption}
+                      src={src}
+                      alt={`Foto de alumnos ${i + 1}`}
                       loading="lazy"
                       className="h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-logo-blue/80 via-logo-blue/10 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <p className="text-xs uppercase tracking-[0.18em] text-logo-cream">{s.caption}</p>
-                    </div>
+                    <div className="absolute inset-0 ring-1 ring-inset ring-logo-blue/10" />
                   </div>
                 </div>
               ))}
