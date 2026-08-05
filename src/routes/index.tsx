@@ -1462,9 +1462,9 @@ function AlumnosCarousel() {
 
           <div className="mt-8 flex items-center justify-between gap-6">
             <div className="flex gap-2">
-              {ALUMNOS_SLIDES.map((s, i) => (
+              {ALUMNOS_SLIDES.map((src, i) => (
                 <button
-                  key={s.src}
+                  key={src}
                   onClick={() => setIndex(i)}
                   aria-label={`Ir a la foto ${i + 1}`}
                   className={`h-1.5 rounded-full transition-all ${
