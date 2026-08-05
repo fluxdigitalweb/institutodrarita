@@ -328,14 +328,8 @@ function Hero() {
 
       <div className="container-x relative grid lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-16 items-center py-16 lg:py-32">
         <div className="min-w-0">
-          <motion.img
-            src={logoImg}
-            alt="Logo del Instituto Juan B. Alberdi"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-6 h-24 w-24 object-contain sm:h-28 sm:w-28"
-          />
+          <motion.div
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
