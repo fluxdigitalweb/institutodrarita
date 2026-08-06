@@ -122,11 +122,13 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP_NUMBER = "5493855000000"; // placeholder AR
 const WHATSAPP_MSG_INFO = encodeURIComponent(
-  "Hola, quiero solicitar información sobre orientación vocacional y entrenamiento cognitivo con la Lic. Natalia Kuresza (M.P. N° 962).",
+  "NECESITO INFORMACIÓN SOBRE CURSO DE PREPARACIÓN PARA EL INGRESO ESC DE OFICIALES.",
 );
 const WHATSAPP_MSG_ENTREVISTA = encodeURIComponent(
-  "Hola, quiero agendar una entrevista para orientación vocacional y entrenamiento cognitivo con la Lic. Natalia Kuresza (M.P. N° 962).",
+  "SOLICITO AGENDAR ENTREVISTA PERSONAL DE ASESORAMIENTO CON LA DRA. RITA ARTAZA.",
 );
+const INSTAGRAM_URL = "https://instagram.com/artazadevella";
+const FACEBOOK_URL = "https://www.facebook.com/share/1Nb8CQk6zx/";
 const WA_URL_INFO = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG_INFO}`;
 const WA_URL_ENTREVISTA = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG_ENTREVISTA}`;
 const WA_URL = WA_URL_INFO;
