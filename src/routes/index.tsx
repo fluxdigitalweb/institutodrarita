@@ -1187,10 +1187,32 @@ function ENFE2022() {
             </div>
           </div>
         </FadeIn>
+
+        <FadeIn delay={0.3}>
+          <div className="mt-10 bg-navy-deep text-white rounded-sm p-8 lg:p-10 border-l-4 border-crimson">
+            <p className="font-display text-xl lg:text-2xl leading-relaxed">
+              De la provincia de Santiago del Estero, nuestra institución fue la
+              única que participó y firmó el “Manifiesto por la Educación”, un
+              documento de gran valor y compromiso.
+            </p>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.1}>
+          <div className="mt-24 pt-16 border-t border-navy-deep/10">
+            <SectionEyebrow>Septiembre 2025</SectionEyebrow>
+            <h3 className="mt-6 font-display text-3xl lg:text-4xl text-navy-deep text-balance max-w-4xl">
+              Jornadas institucionales · Septiembre 2025
+            </h3>
+          </div>
+        </FadeIn>
+
+        <ENFECarousel images={sep2025Images} />
       </div>
     </section>
   );
 }
+
 
 /* ---------- CTA final ---------- */
 
