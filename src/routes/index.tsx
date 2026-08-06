@@ -20,6 +20,7 @@ import {
   ChevronRight,
   ChevronLeft,
 } from "lucide-react";
+import fachadaAsset from "@/assets/fachada-instituto.jpeg.asset.json";
 import heroAsset from "@/assets/aula-pizarron.jpg.asset.json";
 import directorAsset from "@/assets/directora.jpg.asset.json";
 import kureszaAsset from "@/assets/kuresza.jpeg.asset.json";
@@ -1002,19 +1003,23 @@ function Ubicacion() {
         <FadeIn>
           <SectionEyebrow>Ubicación</SectionEyebrow>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-navy-deep text-balance">
-            Santiago del Estero, Argentina.
+            Colón Sur N° 1496, esquina Viamonte.
           </h2>
           <p className="mt-5 text-navy/70 leading-relaxed">
             Nuestras instalaciones están pensadas para el estudio serio, el
             entrenamiento y la formación integral de cada aspirante.
           </p>
-          <div className="mt-8 flex items-center gap-3 text-navy-deep">
-            <MapPin className="h-5 w-5 text-crimson" />
-            <span className="text-sm">Santiago del Estero · Argentina</span>
+          <div className="mt-8 flex items-start gap-3 text-navy-deep">
+            <MapPin className="h-5 w-5 text-crimson shrink-0 mt-0.5" />
+            <span className="text-sm">
+              Colón Sur N° 1496, esquina Viamonte · Santiago del Estero Capital
+              <br />
+              (al lado de Brizuela Automotores)
+            </span>
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="https://www.google.com/maps/dir/?api=1&destination=Santiago+del+Estero+Argentina"
+              href="https://www.google.com/maps/dir/?api=1&destination=Colon+Sur+1496+esquina+Viamonte,+Santiago+del+Estero,+Argentina"
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center gap-2 rounded-sm bg-navy-deep px-7 py-4 text-xs uppercase tracking-[0.2em] text-white hover:bg-navy transition-all hover:-translate-y-0.5"
@@ -1027,8 +1032,8 @@ function Ubicacion() {
         <FadeIn delay={0.15}>
           <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-navy-deep/10 shadow-card">
             <iframe
-              title="Mapa Santiago del Estero"
-              src="https://www.google.com/maps?q=Santiago+del+Estero,+Argentina&output=embed"
+              title="Mapa Colón Sur 1496, Santiago del Estero"
+              src="https://www.google.com/maps?q=Colon+Sur+1496+esquina+Viamonte,+Santiago+del+Estero,+Argentina&output=embed"
               className="absolute inset-0 h-full w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -1036,7 +1041,20 @@ function Ubicacion() {
           </div>
         </FadeIn>
       </div>
+      <div className="container-x mt-12">
+        <FadeIn delay={0.2}>
+          <div className="overflow-hidden rounded-sm border border-navy-deep/10 shadow-card">
+            <img
+              src={fachadaAsset.url}
+              alt="Fachada del Instituto Juan B. Alberdi en Colón Sur N° 1496, esquina Viamonte, Santiago del Estero Capital"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
+        </FadeIn>
+      </div>
     </section>
+
   );
 }
 
