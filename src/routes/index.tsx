@@ -29,8 +29,6 @@ import purposeAsset from "@/assets/proposito-egresados-2026.jpeg.asset.json";
 import entrenamientoAsset from "@/assets/entrenamiento.jpg.asset.json";
 import logoAsset from "@/assets/logoacademia.png.asset.json";
 import alumnos14Asset from "@/assets/alumnos-14.jpeg.asset.json";
-import alumnos16Asset from "@/assets/alumnos-16.jpeg.asset.json";
-import alumnos17Asset from "@/assets/alumnos-17.jpeg.asset.json";
 import alumnos18Asset from "@/assets/alumnos-18.jpeg.asset.json";
 import alumnos19Asset from "@/assets/alumnos-19.jpeg.asset.json";
 import alumnos20Asset from "@/assets/alumnos-20.jpeg.asset.json";
@@ -81,8 +79,6 @@ const ALUMNOS_SLIDES = [
   alumnos18Asset.url,
   alumnos21Asset.url,
   alumnos20Asset.url,
-  alumnos16Asset.url,
-  alumnos17Asset.url,
 ];
 
 const GALLERY_IMAGES = [purposeAsset.url, groupParkAsset.url, clasePizarronAsset.url];
