@@ -1104,6 +1104,12 @@ function ENFE2022() {
     { src: carousel3Asset.url, alt: "Representantes de Santiago del Estero en el Monumento a la Bandera" },
     { src: carousel4Asset.url, alt: "Participantes con la bandera del Encuentro Nacional Familias por la Educación" },
   ];
+  const sep2025Images = [
+    { src: sep20251Asset.url, alt: "Charla institucional en auditorio con estudiantes, septiembre 2025" },
+    { src: sep20252Asset.url, alt: "Equipo del instituto en el auditorio, septiembre 2025" },
+    { src: sep20253Asset.url, alt: "Representantes del instituto en el Centro Cultural Sixto Palavecino" },
+  ];
+
   return (
     <section id="enfe-2022" className="py-28 lg:py-36 bg-beige-light/40">
       <div className="container-x">
