@@ -20,6 +20,7 @@ import {
   ChevronRight,
   ChevronLeft,
 } from "lucide-react";
+import fachadaAsset from "@/assets/fachada-instituto.jpeg.asset.json";
 import heroAsset from "@/assets/aula-pizarron.jpg.asset.json";
 import directorAsset from "@/assets/directora.jpg.asset.json";
 import kureszaAsset from "@/assets/kuresza.jpeg.asset.json";
