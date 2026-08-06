@@ -56,6 +56,10 @@ import moduloIntelectualAsset from "@/assets/modulointelectual.jpeg.asset.json";
 import enfeDocAsset from "@/assets/enfe-2022-documento.pdf.asset.json";
 import manifiestoAsset from "@/assets/manifiesto-educacion.pdf.asset.json";
 import manifiestoPreview from "@/assets/manifiesto-preview.jpg.asset.json";
+import sep20251Asset from "@/assets/sep2025-1.jpeg.asset.json";
+import sep20252Asset from "@/assets/sep2025-2.jpeg.asset.json";
+import sep20253Asset from "@/assets/sep2025-3.jpeg.asset.json";
+
 import enfeDocPreview from "@/assets/enfe-doc-preview.jpg.asset.json";
 
 const heroImg = heroAsset.url;
@@ -471,7 +475,7 @@ const SERVICES = [
   {
     icon: Brain,
     title: "Evaluación intelectual",
-    text: "Preparación académica intensiva para exámenes de ingreso. Coordinadora: Dra. Rita Artaza · M.P. N° 5275.",
+    text: "Preparación académica intensiva para exámenes de ingreso. Directora: Dra. Rita Artaza · M.P. N° 5275.",
     image: moduloIntelectualAsset.url,
   },
   {
@@ -1104,6 +1108,12 @@ function ENFE2022() {
     { src: carousel3Asset.url, alt: "Representantes de Santiago del Estero en el Monumento a la Bandera" },
     { src: carousel4Asset.url, alt: "Participantes con la bandera del Encuentro Nacional Familias por la Educación" },
   ];
+  const sep2025Images = [
+    { src: sep20251Asset.url, alt: "Charla institucional en auditorio con estudiantes, septiembre 2025" },
+    { src: sep20252Asset.url, alt: "Equipo del instituto en el auditorio, septiembre 2025" },
+    { src: sep20253Asset.url, alt: "Representantes del instituto en el Centro Cultural Sixto Palavecino" },
+  ];
+
   return (
     <section id="enfe-2022" className="py-28 lg:py-36 bg-beige-light/40">
       <div className="container-x">
@@ -1187,10 +1197,32 @@ function ENFE2022() {
             </div>
           </div>
         </FadeIn>
+
+        <FadeIn delay={0.3}>
+          <div className="mt-10 bg-navy-deep text-white rounded-sm p-8 lg:p-10 border-l-4 border-crimson">
+            <p className="font-display text-xl lg:text-2xl leading-relaxed">
+              De la provincia de Santiago del Estero, nuestra institución fue la
+              única que participó y firmó el “Manifiesto por la Educación”, un
+              documento de gran valor y compromiso.
+            </p>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.1}>
+          <div className="mt-24 pt-16 border-t border-navy-deep/10">
+            <SectionEyebrow>Septiembre 2025</SectionEyebrow>
+            <h3 className="mt-6 font-display text-3xl lg:text-4xl text-navy-deep text-balance max-w-4xl">
+              Jornadas institucionales · Septiembre 2025
+            </h3>
+          </div>
+        </FadeIn>
+
+        <ENFECarousel images={sep2025Images} />
       </div>
     </section>
   );
 }
+
 
 /* ---------- CTA final ---------- */
 
