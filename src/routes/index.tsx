@@ -1343,8 +1343,24 @@ function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Instagram className="h-4 w-4 text-beige" />
-              <a href="#" className="hover:text-beige">
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-beige"
+              >
                 Instagram
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <Facebook className="h-4 w-4 text-beige" />
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-beige"
+              >
+                Facebook
               </a>
             </li>
             <li className="flex items-center gap-3">
