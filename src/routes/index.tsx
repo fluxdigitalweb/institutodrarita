@@ -475,7 +475,7 @@ const SERVICES = [
   {
     icon: Brain,
     title: "Evaluación intelectual",
-    text: "Preparación académica intensiva para exámenes de ingreso. Coordinadora: Dra. Rita Artaza · M.P. N° 5275.",
+    text: "Preparación académica intensiva para exámenes de ingreso. Directora: Dra. Rita Artaza · M.P. N° 5275.",
     image: moduloIntelectualAsset.url,
   },
   {
