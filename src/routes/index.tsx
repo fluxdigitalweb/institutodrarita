@@ -79,8 +79,6 @@ const ALUMNOS_SLIDES = [
   alumnos18Asset.url,
   alumnos21Asset.url,
   alumnos20Asset.url,
-  alumnos16Asset.url,
-  alumnos17Asset.url,
 ];
 
 const GALLERY_IMAGES = [purposeAsset.url, groupParkAsset.url, clasePizarronAsset.url];
