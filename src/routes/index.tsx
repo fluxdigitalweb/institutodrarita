@@ -56,6 +56,10 @@ import moduloIntelectualAsset from "@/assets/modulointelectual.jpeg.asset.json";
 import enfeDocAsset from "@/assets/enfe-2022-documento.pdf.asset.json";
 import manifiestoAsset from "@/assets/manifiesto-educacion.pdf.asset.json";
 import manifiestoPreview from "@/assets/manifiesto-preview.jpg.asset.json";
+import sep20251Asset from "@/assets/sep2025-1.jpeg.asset.json";
+import sep20252Asset from "@/assets/sep2025-2.jpeg.asset.json";
+import sep20253Asset from "@/assets/sep2025-3.jpeg.asset.json";
+
 import enfeDocPreview from "@/assets/enfe-doc-preview.jpg.asset.json";
 
 const heroImg = heroAsset.url;
