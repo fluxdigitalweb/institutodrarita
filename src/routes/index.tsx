@@ -10,6 +10,7 @@ import {
   X,
   MessageCircle,
   Instagram,
+  Facebook,
   Mail,
   MapPin,
   Phone,
