@@ -1,10 +1,8 @@
-<!-- LOVABLE:BEGIN -->
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+# Instituto Dra. Rita — notas para agentes
+
+- Stack: TanStack Start (SSR) + Vite + Tailwind v4 + shadcn/ui, empaquetado con Nitro.
+- Rutas por archivo en `src/routes/`; `src/routeTree.gen.ts` es autogenerado, no editarlo a mano.
+- `npm run dev` levanta el dev server en el puerto 8080.
+- `npm run build` genera el bundle de Vercel (Build Output API) en `.vercel/output`.
+  Para otro target, exportar `NITRO_PRESET` (por ejemplo `node-server`).
+- Deploy: Vercel, conectado a la rama `main` de este repo.
