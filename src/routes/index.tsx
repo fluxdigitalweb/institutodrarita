@@ -27,7 +27,7 @@ import directorAsset from "@/assets/directora.jpg.asset.json";
 import kureszaAsset from "@/assets/kuresza.jpeg.asset.json";
 import purposeAsset from "@/assets/proposito-egresados-2026.jpeg.asset.json";
 import entrenamientoAsset from "@/assets/entrenamiento.jpg.asset.json";
-import logoAsset from "@/assets/logoacademia.png.asset.json";
+import logoAsset from "@/assets/logorita.png.asset.json";
 import alumnos14Asset from "@/assets/alumnos-14.jpeg.asset.json";
 import alumnos18Asset from "@/assets/alumnos-18.jpeg.asset.json";
 import alumnos19Asset from "@/assets/alumnos-19.jpeg.asset.json";
@@ -731,7 +731,7 @@ function Direccion() {
 
 const KURESZA_PILARES = [
   "Terapia cognitiva conductual",
-  "Diplomada en Psicodiagnóstico Clínico",
+  "Orientación vocacional y entrenamiento cognitivo",
   "Posgrado en Neuropsicología",
 ];
 
@@ -780,7 +780,7 @@ function OrientacionVocacional() {
                 <Brain className="h-3.5 w-3.5" /> Clases de acompañamiento integral
               </div>
               <h3 className="mt-4 font-display text-3xl lg:text-4xl text-navy-deep leading-tight">
-                Un acompañamiento clínico y cognitivo para el aspirante integral.
+                Orientación vocacional y entrenamiento cognitivo para el aspirante integral.
               </h3>
               <p className="mt-5 text-navy/70 leading-relaxed">
                 Clases orientadas a fortalecer las capacidades intelectuales,
@@ -858,7 +858,7 @@ function Beneficios() {
 
 const STEPS = [
   { t: "Entrevista inicial", d: "Primer encuentro para conocerte y comprender tus objetivos." },
-  { t: "Diagnóstico del aspirante", d: "Evaluamos fortalezas y áreas a fortalecer." },
+  { t: "Perfil del aspirante", d: "Identificamos fortalezas y áreas a fortalecer." },
   { t: "Plan personalizado", d: "Diseñamos una hoja de ruta adaptada a tu caso." },
   { t: "Entrenamiento intensivo", d: "Preparación académica, psicológica y física en paralelo." },
   { t: "Preparación final para ingreso", d: "Simulacros y ajustes finales antes del examen." },
