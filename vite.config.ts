@@ -5,7 +5,6 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
-import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(({ command }) => ({
   server: {
@@ -13,6 +12,7 @@ export default defineConfig(({ command }) => ({
     port: 8080,
   },
   resolve: {
+    tsconfigPaths: true,
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
@@ -27,7 +27,6 @@ export default defineConfig(({ command }) => ({
     ],
   },
   plugins: [
-    tsConfigPaths({ projects: ["./tsconfig.json"] }),
     tailwindcss(),
     tanstackStart({
       // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
