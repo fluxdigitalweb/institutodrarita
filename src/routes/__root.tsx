@@ -73,7 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Instituto de Apoyo Académico | Preparación Fuerzas de Seguridad" },
+      { title: "Equipo de Apoyo Académico | Preparación Fuerzas de Seguridad" },
       {
         name: "description",
         content:
@@ -92,8 +92,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Landing page for an educational institute preparing students for security forces entry in Argentina." },
       { property: "og:description", content: "Landing page for an educational institute preparing students for security forces entry in Argentina." },
       { name: "twitter:description", content: "Landing page for an educational institute preparing students for security forces entry in Argentina." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/AHmvjlOAsahTSx8qHuwAKy3xZBs1/social-images/social-1783016549702-logoacademia.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/AHmvjlOAsahTSx8qHuwAKy3xZBs1/social-images/social-1783016549702-logoacademia.webp" },
+      { property: "og:image", content: "/logorita.png" },
+      { name: "twitter:image", content: "/logorita.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

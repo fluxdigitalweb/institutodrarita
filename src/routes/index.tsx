@@ -88,7 +88,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Instituto Juan B. Alberdi | Apoyo Académico",
+        title: "Equipo Juan B. Alberdi | Apoyo Académico",
       },
       {
         name: "description",
@@ -96,7 +96,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Instituto Juan B. Alberdi | Apoyo Académico",
+        content: "Equipo Juan B. Alberdi | Apoyo Académico",
       },
       {
         property: "og:description",
