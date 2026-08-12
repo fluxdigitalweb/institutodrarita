@@ -371,7 +371,7 @@ function Hero() {
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="mt-8 font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.98] text-balance"
           >
-            Instituto Juan B. Alberdi{" "}
+            Equipo Juan B. Alberdi{" "}
             <span className="block italic text-logo-blue">Apoyo Académico</span>
           </motion.h1>
 
@@ -1300,7 +1300,7 @@ function Footer() {
             <div className="flex h-11 w-11 items-center justify-center">
               <img src={logoImg} alt="Logo Instituto" className="h-11 w-11 object-contain" />
             </div>
-            <div className="font-display text-lg">Instituto de Apoyo Académico</div>
+            <div className="font-display text-lg">Equipo de Apoyo Académico</div>
           </div>
           <p className="mt-5 max-w-md text-sm leading-relaxed">
             25 años preparando aspirantes al ingreso a las fuerzas de seguridad
@@ -1413,7 +1413,7 @@ function Galeria() {
       <div className="container-x">
         <FadeIn>
           <div className="max-w-2xl">
-            <SectionEyebrow>El instituto en acción</SectionEyebrow>
+            <SectionEyebrow>El Equipo en acción</SectionEyebrow>
             <h2 className="mt-6 font-display text-4xl lg:text-5xl text-balance">
               Formación real, resultados reales.
             </h2>
@@ -1490,7 +1490,7 @@ function AlumnosCarousel() {
               Historias que hoy visten uniforme.
             </h2>
             <p className="mt-5 text-logo-blue/70 leading-relaxed">
-              Aspirantes que confiaron en el instituto y hoy forman parte de las fuerzas de seguridad.
+              Aspirantes que confiaron en el Equipo y hoy forman parte de las fuerzas de seguridad.
             </p>
           </div>
         </FadeIn>
