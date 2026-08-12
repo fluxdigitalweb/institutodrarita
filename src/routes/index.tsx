@@ -245,7 +245,7 @@ function Loader({ done }: { done: boolean }) {
           <div className="h-full w-full bg-beige loading-bar !static" />
         </div>
         <p className="text-[11px] uppercase tracking-[0.4em] text-beige/80">
-          Instituto de Apoyo Académico
+          Equipo de Apoyo Académico
         </p>
       </div>
     </motion.div>
