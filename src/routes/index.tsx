@@ -1359,15 +1359,7 @@ function Footer() {
                 Facebook
               </a>
             </li>
-            <li className="flex items-center gap-3">
-              <Mail className="h-4 w-4 text-beige" />
-              <a
-                href="mailto:contacto@institutoapoyo.com.ar"
-                className="hover:text-beige"
-              >
-                contacto@institutoapoyo.com.ar
-              </a>
-            </li>
+
             <li className="flex items-center gap-3">
               <MapPin className="h-4 w-4 text-beige" />
               Santiago del Estero, Argentina
