@@ -80,7 +80,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Instituto premium con 25 años preparando aspirantes al ingreso a las fuerzas de seguridad en Argentina. Evaluación intelectual, psicológica y física.",
       },
       { name: "author", content: "Instituto de Apoyo Académico" },
-      { property: "og:title", content: "Instituto de Apoyo Académico | Preparación Fuerzas de Seguridad" },
+      {
+        property: "og:title",
+        content: "Instituto de Apoyo Académico | Preparación Fuerzas de Seguridad",
+      },
       {
         property: "og:description",
         content:
@@ -88,10 +91,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Instituto de Apoyo Académico | Preparación Fuerzas de Seguridad" },
-      { name: "description", content: "Landing page for an educational institute preparing students for security forces entry in Argentina." },
-      { property: "og:description", content: "Landing page for an educational institute preparing students for security forces entry in Argentina." },
-      { name: "twitter:description", content: "Landing page for an educational institute preparing students for security forces entry in Argentina." },
+      {
+        name: "twitter:title",
+        content: "Instituto de Apoyo Académico | Preparación Fuerzas de Seguridad",
+      },
+      {
+        name: "description",
+        content:
+          "Landing page for an educational institute preparing students for security forces entry in Argentina.",
+      },
+      {
+        property: "og:description",
+        content:
+          "Landing page for an educational institute preparing students for security forces entry in Argentina.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Landing page for an educational institute preparing students for security forces entry in Argentina.",
+      },
       { property: "og:image", content: "/logorita.png" },
       { name: "twitter:image", content: "/logorita.png" },
     ],
@@ -114,7 +132,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es" className="bg-background">
       <head>
         <HeadContent />
       </head>

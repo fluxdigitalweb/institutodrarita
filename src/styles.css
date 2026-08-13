@@ -52,30 +52,30 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --shadow-elegant: 0 30px 80px -30px color-mix(in oklab, var(--navy-deep) 45%, transparent);
-  --shadow-card: 0 2px 8px -2px color-mix(in oklab, var(--navy-deep) 12%, transparent),
-                 0 20px 40px -20px color-mix(in oklab, var(--navy-deep) 18%, transparent);
+  --shadow-card:
+    0 2px 8px -2px color-mix(in oklab, var(--navy-deep) 12%, transparent),
+    0 20px 40px -20px color-mix(in oklab, var(--navy-deep) 18%, transparent);
 }
 
 :root {
   --radius: 0.5rem;
 
-  --navy-deep: oklch(0.24 0.06 258);   /* #0B2341 */
-  --navy: oklch(0.30 0.07 258);
-  --beige: oklch(0.82 0.045 78);        /* #D8C3A5 */
-  --beige-light: oklch(0.93 0.018 75);  /* #EFE6DD */
-  --crimson: oklch(0.47 0.18 27);       /* #B71C1C */
+  --navy-deep: oklch(0.24 0.06 258); /* #0B2341 */
+  --navy: oklch(0.3 0.07 258);
+  --beige: oklch(0.82 0.045 78); /* #D8C3A5 */
+  --beige-light: oklch(0.93 0.018 75); /* #EFE6DD */
+  --crimson: oklch(0.47 0.18 27); /* #B71C1C */
   --ink: oklch(0.18 0.02 260);
 
   /* Logo palette */
-  --logo-cream: oklch(0.96 0.02 80);     /* #F5F0E8 */
-  --logo-beige: oklch(0.82 0.045 78);     /* #D6C6B7 */
-  --logo-brown: oklch(0.42 0.07 45);      /* #6B4A3A */
-  --logo-green: oklch(0.48 0.09 138);     /* #4A6741 */
-  --logo-green-dark: oklch(0.38 0.08 138);/* #3A5333 */
-  --logo-orange: oklch(0.62 0.16 45);     /* #E0704A */
-  --logo-gold: oklch(0.80 0.12 85);       /* #F4C95D */
-  --logo-blue: oklch(0.35 0.08 250);       /* #1E3A5F */
-
+  --logo-cream: oklch(0.96 0.02 80); /* #F5F0E8 */
+  --logo-beige: oklch(0.82 0.045 78); /* #D6C6B7 */
+  --logo-brown: oklch(0.42 0.07 45); /* #6B4A3A */
+  --logo-green: oklch(0.48 0.09 138); /* #4A6741 */
+  --logo-green-dark: oklch(0.38 0.08 138); /* #3A5333 */
+  --logo-orange: oklch(0.62 0.16 45); /* #E0704A */
+  --logo-gold: oklch(0.8 0.12 85); /* #F4C95D */
+  --logo-blue: oklch(0.35 0.08 250); /* #1E3A5F */
 
   --background: oklch(1 0 0);
   --foreground: var(--ink);
@@ -85,7 +85,7 @@
   --primary-foreground: oklch(1 0 0);
   --secondary: var(--beige-light);
   --secondary-foreground: var(--navy-deep);
-  --muted: oklch(0.97 0.005 80);        /* #F7F7F7 */
+  --muted: oklch(0.97 0.005 80); /* #F7F7F7 */
   --muted-foreground: oklch(0.45 0.02 260);
   --accent: var(--beige);
   --accent-foreground: var(--navy-deep);
@@ -115,7 +115,11 @@
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "ss01", "cv11";
   }
-  h1, h2, h3, h4, .font-display {
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
     font-family: var(--font-display);
     letter-spacing: -0.015em;
   }
@@ -140,7 +144,8 @@
   align-items: center;
   gap: 0.75rem;
   color: var(--beige);
-  &::before, &::after {
+  &::before,
+  &::after {
     content: "";
     height: 1px;
     width: 2.5rem;
@@ -150,18 +155,39 @@
 }
 
 @keyframes kbd-fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes kbd-shine {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 @keyframes kbd-loader {
-  0% { transform: scaleX(0); transform-origin: left; }
-  50% { transform: scaleX(1); transform-origin: left; }
-  50.01% { transform-origin: right; }
-  100% { transform: scaleX(0); transform-origin: right; }
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.01% {
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
 }
 
 @utility loading-bar {
@@ -172,4 +198,78 @@
   background: linear-gradient(90deg, transparent, var(--beige), transparent);
   animation: kbd-loader 1.4s ease-in-out infinite;
   z-index: 100;
+}
+
+/* Legacy browser fallbacks: keep modern behavior, but provide stable geometry and color layers. */
+.legacy-aspect-4-5,
+.legacy-aspect-5-4,
+.legacy-aspect-4-3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.legacy-aspect-4-5 {
+  aspect-ratio: 4 / 5;
+}
+.legacy-aspect-5-4 {
+  aspect-ratio: 5 / 4;
+}
+.legacy-aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+@supports not (aspect-ratio: 1 / 1) {
+  .legacy-aspect-4-5 {
+    min-height: 31rem;
+  }
+  .legacy-aspect-5-4 {
+    min-height: 24rem;
+  }
+  .legacy-aspect-4-3 {
+    min-height: 20rem;
+  }
+}
+
+.legacy-backdrop {
+  background-color: color-mix(in srgb, var(--logo-cream) 95%, transparent);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .legacy-backdrop {
+    background-color: var(--logo-cream);
+  }
+}
+
+.legacy-hero-overlay {
+  background: linear-gradient(
+    135deg,
+    var(--logo-cream) 0%,
+    color-mix(in srgb, var(--logo-cream) 95%, transparent) 58%,
+    color-mix(in srgb, var(--logo-beige) 40%, transparent) 100%
+  );
+}
+
+.legacy-image-vignette {
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--logo-blue) 70%, transparent),
+    transparent 68%
+  );
+}
+
+.legacy-image-vignette-soft {
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--navy-deep) 60%, transparent),
+    transparent 70%
+  );
+}
+
+.legacy-module-overlay {
+  background-color: color-mix(in srgb, var(--navy-deep) 80%, transparent);
+  transition: background-color 500ms ease;
+}
+
+.group:hover .legacy-module-overlay {
+  background-color: color-mix(in srgb, var(--navy-deep) 85%, transparent);
 }

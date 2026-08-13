@@ -1,6 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useScroll, useTransform, animate, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+  animate,
+  AnimatePresence,
+} from "framer-motion";
 import {
   Brain,
   HeartPulse,
@@ -239,7 +246,11 @@ function Loader({ done }: { done: boolean }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex h-24 w-24 items-center justify-center"
         >
-          <img src={logoImg} alt="Instituto Juan B. Alberdi" className="h-24 w-24 object-contain drop-shadow-[0_0_24px_rgba(216,195,165,0.35)]" />
+          <img
+            src={logoImg}
+            alt="Instituto Juan B. Alberdi"
+            className="h-24 w-24 object-contain drop-shadow-[0_0_24px_rgba(216,195,165,0.35)]"
+          />
         </motion.div>
         <div className="h-px w-40 overflow-hidden bg-white/10">
           <div className="h-full w-full bg-beige loading-bar !static" />
@@ -268,7 +279,7 @@ function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-logo-cream/95 backdrop-blur-md border-b border-logo-blue/10 py-3"
+          ? "legacy-backdrop backdrop-blur-md border-b border-logo-blue/10 py-3"
           : "bg-transparent py-5"
       }`}
     >
@@ -351,7 +362,7 @@ function Hero() {
       className="relative min-h-screen bg-logo-cream text-logo-blue overflow-hidden pt-28 lg:pt-0 flex items-center"
     >
       {/* Vignette */}
-      <div className="absolute inset-0 bg-gradient-to-br from-logo-cream via-logo-cream/95 to-logo-beige/40" />
+      <div className="absolute inset-0 legacy-hero-overlay" />
 
       <div className="container-x relative grid lg:grid-cols-[1.05fr_1fr] gap-14 lg:gap-16 items-center py-16 lg:py-32">
         <div className="min-w-0">
@@ -390,8 +401,8 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.45 }}
             className="mt-6 max-w-xl text-base lg:text-lg text-logo-blue/70 leading-relaxed"
           >
-            Preparación especializada para el ingreso a las fuerzas de seguridad.
-            Programa integral que forma aspirantes capaces de superar:
+            Preparación especializada para el ingreso a las fuerzas de seguridad. Programa integral
+            que forma aspirantes capaces de superar:
           </motion.p>
 
           <motion.ul
@@ -446,7 +457,7 @@ function Hero() {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative hidden lg:block"
         >
-          <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+          <div className="relative legacy-aspect-4-5 overflow-hidden rounded-sm">
             <img
               src={flyerImg}
               alt="Aspirantes a las fuerzas de seguridad en formación"
@@ -454,7 +465,7 @@ function Hero() {
               height={1600}
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-logo-blue/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 legacy-image-vignette" />
             <div className="absolute inset-0 ring-1 ring-inset ring-logo-beige/40" />
           </div>
         </motion.div>
@@ -506,8 +517,8 @@ function Servicios() {
               Preparación integral para tu ingreso
             </h2>
             <p className="mt-5 text-navy/70 leading-relaxed">
-              Cada aspirante recibe una formación completa que cubre las tres
-              instancias evaluativas del proceso de admisión.
+              Cada aspirante recibe una formación completa que cubre las tres instancias evaluativas
+              del proceso de admisión.
             </p>
           </div>
         </FadeIn>
@@ -524,21 +535,31 @@ function Servicios() {
                       className="h-full w-full object-cover"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-navy-deep/80 transition-all duration-500 group-hover:bg-navy-deep/85" />
+                    <div className="absolute inset-0 legacy-module-overlay" />
                   </div>
                 )}
                 <div className="relative p-8">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-sm transition-colors duration-500 ${s.image ? "bg-beige text-navy-deep group-hover:bg-beige group-hover:text-navy-deep" : "bg-navy-deep text-beige group-hover:bg-beige group-hover:text-navy-deep"}`}>
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-sm transition-colors duration-500 ${s.image ? "bg-beige text-navy-deep group-hover:bg-beige group-hover:text-navy-deep" : "bg-navy-deep text-beige group-hover:bg-beige group-hover:text-navy-deep"}`}
+                  >
                     <s.icon className="h-5 w-5" />
                   </div>
-                  <h3 className={`mt-8 font-display text-2xl transition-colors ${s.image ? "text-white" : "text-navy-deep group-hover:text-white"}`}>
+                  <h3
+                    className={`mt-8 font-display text-2xl transition-colors ${s.image ? "text-white" : "text-navy-deep group-hover:text-white"}`}
+                  >
                     {s.title}
                   </h3>
-                  <p className={`mt-3 text-sm leading-relaxed transition-colors ${s.image ? "text-white/80" : "text-navy/70 group-hover:text-white/70"}`}>
+                  <p
+                    className={`mt-3 text-sm leading-relaxed transition-colors ${s.image ? "text-white/80" : "text-navy/70 group-hover:text-white/70"}`}
+                  >
                     {s.text}
                   </p>
-                  <div className={`mt-8 h-px w-8 transition-all duration-500 group-hover:w-full ${s.image ? "bg-beige/40 group-hover:bg-beige" : "bg-navy-deep/30 group-hover:bg-beige"}`} />
-                  <div className={`mt-4 text-[10px] uppercase tracking-[0.25em] transition-colors ${s.image ? "text-white/60 group-hover:text-beige" : "text-navy/50 group-hover:text-beige"}`}>
+                  <div
+                    className={`mt-8 h-px w-8 transition-all duration-500 group-hover:w-full ${s.image ? "bg-beige/40 group-hover:bg-beige" : "bg-navy-deep/30 group-hover:bg-beige"}`}
+                  />
+                  <div
+                    className={`mt-4 text-[10px] uppercase tracking-[0.25em] transition-colors ${s.image ? "text-white/60 group-hover:text-beige" : "text-navy/50 group-hover:text-beige"}`}
+                  >
                     0{i + 1} · Módulo
                   </div>
                 </div>
@@ -570,8 +591,7 @@ function Diferenciales() {
         aria-hidden
         className="absolute inset-0 opacity-[0.05]"
         style={{
-          backgroundImage:
-            "radial-gradient(circle at 1px 1px, var(--beige) 1px, transparent 0)",
+          backgroundImage: "radial-gradient(circle at 1px 1px, var(--beige) 1px, transparent 0)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -614,7 +634,7 @@ function Proposito() {
     <section className="py-28 lg:py-36 bg-muted">
       <div className="container-x grid lg:grid-cols-2 gap-14 items-center">
         <FadeIn>
-          <div className="relative aspect-[5/4] overflow-hidden rounded-sm">
+          <div className="relative legacy-aspect-5-4 overflow-hidden rounded-sm">
             <img
               src={purposeImg}
               alt="Egresados junto al equipo del Instituto Juan B. Alberdi"
@@ -633,9 +653,8 @@ function Proposito() {
             <span className="italic text-crimson">construir su futuro</span>.
           </h2>
           <p className="mt-6 text-navy/75 leading-relaxed text-lg">
-            Formando aspirantes comprometidos con el estudio y la
-            responsabilidad de adquirir herramientas intelectuales para toda la
-            vida.
+            Formando aspirantes comprometidos con el estudio y la responsabilidad de adquirir
+            herramientas intelectuales para toda la vida.
           </p>
           <div className="mt-8 flex items-center gap-4 text-navy-deep">
             <div className="h-px w-12 bg-navy-deep/30" />
@@ -683,13 +702,11 @@ function Direccion() {
                 width={1024}
                 height={1280}
                 loading="lazy"
-                className="h-full w-full object-cover aspect-[4/5]"
+                className="h-full w-full object-cover legacy-aspect-4-5"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent" />
+              <div className="absolute inset-0 legacy-image-vignette-soft" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <div className="text-[10px] uppercase tracking-[0.3em] text-beige">
-                  Directora
-                </div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-beige">Directora</div>
                 <div className="mt-2 inline-block border-l-4 border-beige bg-navy-deep/90 px-4 py-2 font-display text-3xl font-semibold shadow-lg lg:text-4xl">
                   Dra. Rita Artaza
                 </div>
@@ -715,8 +732,8 @@ function Direccion() {
 
               <div className="mt-10 border-l-2 border-crimson pl-5">
                 <p className="font-display text-xl italic text-navy-deep">
-                  “25 años de ejercicio profesional ininterrumpido al servicio
-                  de quienes eligen prepararse con seriedad.”
+                  “25 años de ejercicio profesional ininterrumpido al servicio de quienes eligen
+                  prepararse con seriedad.”
                 </p>
               </div>
             </div>
@@ -746,8 +763,8 @@ function OrientacionVocacional() {
               Orientación Vocacional y Entrenamiento Cognitivo
             </h2>
             <p className="mt-5 text-navy/70 leading-relaxed">
-              Acompañamiento profesional para potenciar el desarrollo cognitivo,
-              emocional y vocacional de cada aspirante.
+              Acompañamiento profesional para potenciar el desarrollo cognitivo, emocional y
+              vocacional de cada aspirante.
             </p>
           </div>
         </FadeIn>
@@ -761,17 +778,13 @@ function OrientacionVocacional() {
                 width={828}
                 height={1280}
                 loading="lazy"
-                className="h-full w-full object-cover aspect-[4/5]"
+                className="h-full w-full object-cover legacy-aspect-4-5"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent" />
+              <div className="absolute inset-0 legacy-image-vignette-soft" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <div className="text-[10px] uppercase tracking-[0.3em] text-beige">
-                  Psicóloga
-                </div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-beige">Psicóloga</div>
                 <div className="mt-1 font-display text-3xl">Lic. Natalia Kuresza</div>
-                <div className="mt-1 text-xs text-beige/80 tracking-wide">
-                  M.P. N° 962
-                </div>
+                <div className="mt-1 text-xs text-beige/80 tracking-wide">M.P. N° 962</div>
               </div>
             </div>
 
@@ -783,9 +796,8 @@ function OrientacionVocacional() {
                 Orientación vocacional y entrenamiento cognitivo para el aspirante integral.
               </h3>
               <p className="mt-5 text-navy/70 leading-relaxed">
-                Clases orientadas a fortalecer las capacidades intelectuales,
-                emocionales y vocacionales necesarias para afrontar el proceso de
-                ingreso.
+                Clases orientadas a fortalecer las capacidades intelectuales, emocionales y
+                vocacionales necesarias para afrontar el proceso de ingreso.
               </p>
 
               <div className="mt-8">
@@ -804,8 +816,8 @@ function OrientacionVocacional() {
 
               <div className="mt-10 border-l-2 border-crimson pl-5">
                 <p className="font-display text-xl italic text-navy-deep">
-                  “El entrenamiento cognitivo y la orientación vocacional son
-                  claves para construir un ingreso sólido y sostenido.”
+                  “El entrenamiento cognitivo y la orientación vocacional son claves para construir
+                  un ingreso sólido y sostenido.”
                 </p>
               </div>
             </div>
@@ -886,16 +898,16 @@ function Proceso() {
               return (
                 <FadeIn key={s.t} delay={0.05}>
                   <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
-                    <div className={`${left ? "lg:order-1 lg:text-right" : "lg:order-2"} pl-12 lg:pl-0`}>
+                    <div
+                      className={`${left ? "lg:order-1 lg:text-right" : "lg:order-2"} pl-12 lg:pl-0`}
+                    >
                       <div className="text-[11px] uppercase tracking-[0.3em] text-crimson">
                         Paso 0{i + 1}
                       </div>
                       <h3 className="mt-3 font-display text-2xl lg:text-3xl text-navy-deep">
                         {s.t}
                       </h3>
-                      <p className="mt-3 text-navy/70 max-w-md lg:inline-block">
-                        {s.d}
-                      </p>
+                      <p className="mt-3 text-navy/70 max-w-md lg:inline-block">{s.d}</p>
                     </div>
                     <div className={`${left ? "lg:order-2" : "lg:order-1"} relative`}>
                       <div className="absolute left-4 lg:left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-navy-deep text-beige text-xs font-medium ring-8 ring-white">
@@ -1005,8 +1017,8 @@ function Ubicacion() {
             Colón Sur N° 1496, esquina Viamonte.
           </h2>
           <p className="mt-5 text-navy/70 leading-relaxed">
-            Nuestras instalaciones están pensadas para el estudio serio, el
-            entrenamiento y la formación integral de cada aspirante.
+            Nuestras instalaciones están pensadas para el estudio serio, el entrenamiento y la
+            formación integral de cada aspirante.
           </p>
           <div className="mt-8 flex items-start gap-3 text-navy-deep">
             <MapPin className="h-5 w-5 text-crimson shrink-0 mt-0.5" />
@@ -1029,7 +1041,7 @@ function Ubicacion() {
           </div>
         </FadeIn>
         <FadeIn delay={0.15}>
-          <div className="relative aspect-[4/3] rounded-sm overflow-hidden border border-navy-deep/10 shadow-card">
+          <div className="relative legacy-aspect-4-3 rounded-sm overflow-hidden border border-navy-deep/10 shadow-card">
             <iframe
               title="Mapa Colón Sur 1496, Santiago del Estero"
               src="https://www.google.com/maps?q=Colon+Sur+1496+esquina+Viamonte,+Santiago+del+Estero,+Argentina&output=embed"
@@ -1053,7 +1065,6 @@ function Ubicacion() {
         </FadeIn>
       </div>
     </section>
-
   );
 }
 
@@ -1071,7 +1082,7 @@ function ENFECarousel({ images }: { images: { src: string; alt: string }[] }) {
 
   return (
     <div className="mt-14 relative">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-navy-deep/10 shadow-card">
+      <div className="relative legacy-aspect-4-3 overflow-hidden rounded-sm border border-navy-deep/10 shadow-card">
         <AnimatePresence mode="wait">
           <motion.img
             key={current}
@@ -1122,13 +1133,25 @@ function ENFE2022() {
     { src: carouselAsset.url, alt: "Participación de Familias por la Educación en Rosario" },
     { src: carousel1Asset.url, alt: "Representantes junto al espacio Argentinos por la Educación" },
     { src: carousel2Asset.url, alt: "Familias por la Educación Santiago del Estero" },
-    { src: carousel3Asset.url, alt: "Representantes de Santiago del Estero en el Monumento a la Bandera" },
-    { src: carousel4Asset.url, alt: "Participantes con la bandera del Encuentro Nacional Familias por la Educación" },
+    {
+      src: carousel3Asset.url,
+      alt: "Representantes de Santiago del Estero en el Monumento a la Bandera",
+    },
+    {
+      src: carousel4Asset.url,
+      alt: "Participantes con la bandera del Encuentro Nacional Familias por la Educación",
+    },
   ];
   const sep2025Images = [
-    { src: sep20251Asset.url, alt: "Charla institucional en auditorio con estudiantes, septiembre 2025" },
+    {
+      src: sep20251Asset.url,
+      alt: "Charla institucional en auditorio con estudiantes, septiembre 2025",
+    },
     { src: sep20252Asset.url, alt: "Equipo del instituto en el auditorio, septiembre 2025" },
-    { src: sep20253Asset.url, alt: "Representantes del instituto en el Centro Cultural Sixto Palavecino" },
+    {
+      src: sep20253Asset.url,
+      alt: "Representantes del instituto en el Centro Cultural Sixto Palavecino",
+    },
   ];
 
   return (
@@ -1140,10 +1163,9 @@ function ENFE2022() {
             ENFE — Encuentro Nacional Familias por la Educación
           </h2>
           <p className="mt-6 text-navy/70 leading-relaxed max-w-3xl">
-            En octubre de 2022 participamos del Encuentro Nacional de Familias
-            por la Educación en la ciudad de Rosario, junto al Monumento a la
-            Bandera. Un espacio de intercambio entre familias, docentes e
-            instituciones comprometidas con transformar la educación argentina.
+            En octubre de 2022 participamos del Encuentro Nacional de Familias por la Educación en
+            la ciudad de Rosario, junto al Monumento a la Bandera. Un espacio de intercambio entre
+            familias, docentes e instituciones comprometidas con transformar la educación argentina.
           </p>
         </FadeIn>
 
@@ -1158,10 +1180,17 @@ function ENFE2022() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-[0.2em] text-navy/60">Documento</div>
-                  <div className="font-display text-lg text-navy-deep">Manifiesto por la Educación</div>
+                  <div className="font-display text-lg text-navy-deep">
+                    Manifiesto por la Educación
+                  </div>
                 </div>
               </div>
-              <a href={manifiestoAsset.url} target="_blank" rel="noreferrer" className="block relative aspect-[4/3] bg-navy-deep/5 overflow-hidden">
+              <a
+                href={manifiestoAsset.url}
+                target="_blank"
+                rel="noreferrer"
+                className="block relative legacy-aspect-4-3 bg-navy-deep/5 overflow-hidden"
+              >
                 <img
                   src={manifiestoPreview.url}
                   alt="Primera página del Manifiesto por la Educación"
@@ -1192,7 +1221,12 @@ function ENFE2022() {
                   <div className="font-display text-lg text-navy-deep">Registro del Encuentro</div>
                 </div>
               </div>
-              <a href={enfeDocAsset.url} target="_blank" rel="noreferrer" className="block relative aspect-[4/3] bg-navy-deep/5 overflow-hidden">
+              <a
+                href={enfeDocAsset.url}
+                target="_blank"
+                rel="noreferrer"
+                className="block relative legacy-aspect-4-3 bg-navy-deep/5 overflow-hidden"
+              >
                 <img
                   src={enfeDocPreview.url}
                   alt="Primera página del Registro del Encuentro"
@@ -1218,9 +1252,8 @@ function ENFE2022() {
         <FadeIn delay={0.3}>
           <div className="mt-10 bg-navy-deep text-white rounded-sm p-8 lg:p-10 border-l-4 border-crimson">
             <p className="font-display text-xl lg:text-2xl leading-relaxed">
-              De la provincia de Santiago del Estero, nuestra institución fue la
-              única que participó y firmó el “Manifiesto por la Educación”, un
-              documento de gran valor y compromiso.
+              De la provincia de Santiago del Estero, nuestra institución fue la única que participó
+              y firmó el “Manifiesto por la Educación”, un documento de gran valor y compromiso.
             </p>
           </div>
         </FadeIn>
@@ -1240,7 +1273,6 @@ function ENFE2022() {
   );
 }
 
-
 /* ---------- CTA final ---------- */
 
 function CTAFinal() {
@@ -1257,12 +1289,11 @@ function CTAFinal() {
             Inscripciones abiertas
           </div>
           <h2 className="mt-8 font-display text-5xl lg:text-7xl leading-[1] text-balance">
-            Tu ingreso comienza{" "}
-            <span className="italic text-beige">hoy</span>.
+            Tu ingreso comienza <span className="italic text-beige">hoy</span>.
           </h2>
           <p className="mt-6 text-white/75 text-lg leading-relaxed">
-            Comenzá tu preparación con profesionales que llevan más de 25 años
-            formando aspirantes al ingreso a las fuerzas de seguridad.
+            Comenzá tu preparación con profesionales que llevan más de 25 años formando aspirantes
+            al ingreso a las fuerzas de seguridad.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
@@ -1303,14 +1334,12 @@ function Footer() {
             <div className="font-display text-lg">Equipo de Apoyo Académico</div>
           </div>
           <p className="mt-5 max-w-md text-sm leading-relaxed">
-            25 años preparando aspirantes al ingreso a las fuerzas de seguridad
-            en Argentina. Formación seria, personalizada y con método probado.
+            25 años preparando aspirantes al ingreso a las fuerzas de seguridad en Argentina.
+            Formación seria, personalizada y con método probado.
           </p>
         </div>
         <div>
-          <div className="text-[11px] uppercase tracking-[0.25em] text-beige">
-            Enlaces
-          </div>
+          <div className="text-[11px] uppercase tracking-[0.25em] text-beige">Enlaces</div>
           <ul className="mt-5 space-y-3 text-sm">
             {NAV.map((n) => (
               <li key={n.href}>
@@ -1322,40 +1351,23 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <div className="text-[11px] uppercase tracking-[0.25em] text-beige">
-            Contacto
-          </div>
+          <div className="text-[11px] uppercase tracking-[0.25em] text-beige">Contacto</div>
           <ul className="mt-5 space-y-3 text-sm">
             <li className="flex items-center gap-3">
               <MessageCircle className="h-4 w-4 text-beige" />
-              <a
-                href={WA_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-beige"
-              >
+              <a href={WA_URL} target="_blank" rel="noreferrer" className="hover:text-beige">
                 WhatsApp
               </a>
             </li>
             <li className="flex items-center gap-3">
               <Instagram className="h-4 w-4 text-beige" />
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-beige"
-              >
+              <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="hover:text-beige">
                 Instagram
               </a>
             </li>
             <li className="flex items-center gap-3">
               <Facebook className="h-4 w-4 text-beige" />
-              <a
-                href={FACEBOOK_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-beige"
-              >
+              <a href={FACEBOOK_URL} target="_blank" rel="noreferrer" className="hover:text-beige">
                 Facebook
               </a>
             </li>
@@ -1370,8 +1382,8 @@ function Footer() {
       <div className="border-t border-white/10">
         <div className="container-x py-6 flex flex-wrap items-center justify-between gap-4 text-xs text-white/50">
           <div>
-            © {new Date().getFullYear()} Instituto de Apoyo Académico. Todos los
-            derechos reservados.
+            © {new Date().getFullYear()} Instituto de Apoyo Académico. Todos los derechos
+            reservados.
           </div>
           <div className="uppercase tracking-[0.25em]">Est. 2000</div>
         </div>
@@ -1418,7 +1430,7 @@ function Galeria() {
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {GALLERY_IMAGES.map((src, i) => (
             <FadeIn key={src} delay={i * 0.06}>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-sm group">
+              <div className="relative legacy-aspect-4-5 overflow-hidden rounded-sm group">
                 <img
                   src={src}
                   alt={`Instituto ${i + 1}`}
@@ -1435,7 +1447,7 @@ function Galeria() {
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {GALLERY_VIDEOS.map((src, i) => (
             <FadeIn key={src} delay={i * 0.06}>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-navy-deep ring-1 ring-inset ring-beige/20">
+              <div className="relative legacy-aspect-4-5 overflow-hidden rounded-sm bg-navy-deep ring-1 ring-inset ring-beige/20">
                 <video
                   src={src}
                   className="h-full w-full object-cover"
@@ -1456,9 +1468,6 @@ function Galeria() {
     </section>
   );
 }
-
-
-
 
 /* ---------- Nuestros alumnos ---------- */
 
@@ -1500,8 +1509,10 @@ function AlumnosCarousel() {
                   className="relative shrink-0 basis-full sm:basis-[calc(50%-0.625rem)] lg:basis-[calc(33.333%-0.834rem)]"
                 >
                   <div
-                    className={`relative aspect-[4/5] overflow-hidden rounded-sm transition-all duration-500 ${
-                      i === index ? "ring-2 ring-logo-blue/50" : "ring-1 ring-logo-blue/15 opacity-80"
+                    className={`relative legacy-aspect-4-5 overflow-hidden rounded-sm transition-all duration-500 ${
+                      i === index
+                        ? "ring-2 ring-logo-blue/50"
+                        : "ring-1 ring-logo-blue/15 opacity-80"
                     }`}
                   >
                     <img
